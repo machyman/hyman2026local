@@ -1,0 +1,25 @@
+Initializing AMReX (26.10-58-g6bff801899ba)...
+AMReX (26.10-58-g6bff801899ba) initialized
+HARNESS_BEGIN
+harness_version hyman2026local-S3-v2
+amrex_version 26.10-58-g6bff801899ba
+dim 3
+schedule global
+feature sphere
+tag_band 2
+finest_level 2
+ref_ratio 2
+steps_per_coarse 4
+window_steps 24
+window_wall 2.339165797
+tm_dt 0.221623753
+tm_diag 0
+tm_regrid 0
+sum_phi_start 33796.555358009959
+sum_phi_end 33796.555358009937
+# level N B G Gcf dt n_adv kern fill sync avg cfl
+level 0 32768 1 22104 22104 0.00390625 24 0.06442532 0.003046859 0.029070071 0.012163105 0
+level 1 204800 12 173088 88680 0.00390625 24 0.40819506 0.060376601 0.092551583 0.039235176 0
+level 2 549888 79 651240 252915 0.00390625 24 1.154840992 0.244091475 0.003758948 0 0
+HARNESS_END
+AMReX (26.10-58-g6bff801899ba) finalized

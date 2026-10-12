@@ -1,0 +1,617 @@
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAllLevels.cpp b/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAllLevels.cpp
+index b5e48e6..dde9b66 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAllLevels.cpp
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAllLevels.cpp
+@@ -14,12 +14,14 @@ AmrCoreAdv::AdvancePhiAllLevels (Real time, Real dt_lev, int /*iteration*/)
+     Vector< Array<MultiFab,AMREX_SPACEDIM> > fluxes(finest_level+1);
+     for (int lev = 0; lev <= finest_level; lev++)
+     {
++        const double t0 = amrex::second();   // harness: flux MultiFab allocation counts as sync
+         for (int idim = 0; idim < AMREX_SPACEDIM; ++idim)
+         {
+             BoxArray ba = grids[lev];
+             ba.surroundingNodes(idim);
+             fluxes[lev][idim] = MultiFab(ba, dmap[lev], 1, 0);
+         }
++        tm_sync[lev] += amrex::second() - t0;
+     }
+ 
+     for (int lev = 0; lev <= finest_level; lev++)
+@@ -34,8 +36,12 @@ AmrCoreAdv::AdvancePhiAllLevels (Real time, Real dt_lev, int /*iteration*/)
+                      Real dtdz = dt_lev/dx[2]);
+ 
+         // State with ghost cells
++        double t0 = amrex::second();
+         MultiFab Sborder(grids[lev], dmap[lev], phi_new[lev].nComp(), num_grow);
+         FillPatch(lev, time, Sborder, 0, Sborder.nComp());
++        tm_fill[lev] += amrex::second() - t0;
++
++        t0 = amrex::second();   // harness: the flux loop is kernel time
+ 
+ #ifdef AMREX_USE_OMP
+ #pragma omp parallel if (Gpu::notInLaunchRegion())
+@@ -282,6 +288,7 @@ AmrCoreAdv::AdvancePhiAllLevels (Real time, Real dt_lev, int /*iteration*/)
+                 AMREX_ASSERT(itmp == ntmpcomps);
+             } // end mfi
+         } // end omp
++        tm_kern[lev] += amrex::second() - t0;
+     } // end lev
+ 
+     // =======================================================
+@@ -289,13 +296,16 @@ AmrCoreAdv::AdvancePhiAllLevels (Real time, Real dt_lev, int /*iteration*/)
+     // =======================================================
+     for (int lev = finest_level; lev > 0; lev--)
+     {
++       const double t0 = amrex::second();   // harness: flux synchronization, charged to lev-1
+        average_down_faces(amrex::GetArrOfConstPtrs(fluxes[lev  ]),
+                           amrex::GetArrOfPtrs     (fluxes[lev-1]),
+                           refRatio(lev-1), Geom(lev-1));
++       tm_sync[lev-1] += amrex::second() - t0;
+     }
+ 
+     for (int lev = 0; lev <= finest_level; lev++)
+     {
++        const double t0 = amrex::second();   // harness: the update loop is kernel time
+ 
+ #ifdef AMREX_USE_OMP
+ #pragma omp parallel if (Gpu::notInLaunchRegion())
+@@ -330,5 +340,7 @@ AmrCoreAdv::AdvancePhiAllLevels (Real time, Real dt_lev, int /*iteration*/)
+                 });
+             } // end mfi
+         } // end omp
++        tm_kern[lev] += amrex::second() - t0;
++        ++n_adv[lev];
+     } // end lev
+ }
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAtLevel.cpp b/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAtLevel.cpp
+index 3ddd055..9bae031 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAtLevel.cpp
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/AdvancePhiAtLevel.cpp
+@@ -20,6 +20,7 @@ AmrCoreAdv::AdvancePhiAtLevel (int lev, Real time, Real dt_lev, int /*iteration*
+                  Real dtdy = dt_lev/dy;,
+                  Real dtdz = dt_lev/dz);
+ 
++    double t0 = amrex::second();   // harness: flux MultiFab allocation counts as sync
+     MultiFab fluxes[AMREX_SPACEDIM];
+     if (do_reflux)
+     {
+@@ -31,9 +32,15 @@ AmrCoreAdv::AdvancePhiAtLevel (int lev, Real time, Real dt_lev, int /*iteration*
+         }
+     }
+ 
++    tm_sync[lev] += amrex::second() - t0;
++
+     // State with ghost cells
++    t0 = amrex::second();
+     MultiFab Sborder(grids[lev], dmap[lev], S_new.nComp(), num_grow);
+     FillPatch(lev, time, Sborder, 0, Sborder.nComp());
++    tm_fill[lev] += amrex::second() - t0;
++
++    t0 = amrex::second();   // harness: flux and update loops are the kernel
+ 
+ #ifdef AMREX_USE_OMP
+ #pragma omp parallel if (Gpu::notInLaunchRegion())
+@@ -336,6 +343,9 @@ AmrCoreAdv::AdvancePhiAtLevel (int lev, Real time, Real dt_lev, int /*iteration*
+         }
+     }
+ 
++    tm_kern[lev] += amrex::second() - t0;
++
++    t0 = amrex::second();
+     // ======== CFL CHECK, MOVED OUTSIDE MFITER LOOP =========
+ 
+     AMREX_D_TERM(Real umax = facevel[lev][0].norminf(0,0,true);,
+@@ -356,6 +366,9 @@ AmrCoreAdv::AdvancePhiAtLevel (int lev, Real time, Real dt_lev, int /*iteration*
+         amrex::Abort("CFL violation. use smaller adv.cfl.");
+     }
+ 
++    tm_cfl[lev] += amrex::second() - t0;
++
++    t0 = amrex::second();
+     // increment or decrement the flux registers by area and time-weighted fluxes
+     // Note that the fluxes have already been scaled by dt and area
+     // In this example we are solving phi_t = -div(+F)
+@@ -378,4 +391,6 @@ AmrCoreAdv::AdvancePhiAtLevel (int lev, Real time, Real dt_lev, int /*iteration*
+             }
+         }
+     }
++    tm_sync[lev] += amrex::second() - t0;
++    ++n_adv[lev];
+ }
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.H b/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.H
+index 4ead5e8..26b0bf2 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.H
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.H
+@@ -72,6 +72,9 @@ public:
+     // compute dt from CFL considerations
+     amrex::Real EstTimeStep (int lev, amrex::Real time);
+ 
++    // hyman2026local validation harness: print counts, timers and the timing window
++    void ReportHarness () const;
++
+ private:
+ 
+     ////////////////
+@@ -186,6 +189,30 @@ private:
+     // checkpoint prefix and frequency
+     std::string chk_file {"chk"};
+     int chk_int = -1;
++
++    // ---- hyman2026local validation harness ----
++    // geometric tagging: a cell of level lev is tagged when its center lies within
++    // tag_band * dx_lev of the feature (point, circle, sphere, ball or disk)
++    std::string feature {"point"};
++    amrex::Vector<amrex::Real> feature_center {AMREX_D_DECL(amrex::Real(0.5123),
++                                                            amrex::Real(0.4871),
++                                                            amrex::Real(0.5037))};
++    amrex::Real feature_radius = 0.3;
++    amrex::Real feature_tilt = 0.37;   // radians about the x-axis (3D circle only)
++    amrex::Real tag_band = 2.0;
++    // constant advection velocity, so every level sees the same CFL limit and Q = r^L exactly
++    amrex::Vector<amrex::Real> adv_vel {AMREX_D_DECL(amrex::Real(1.0),
++                                                     amrex::Real(1.0),
++                                                     amrex::Real(1.0))};
++    // wall-clock timers, per level unless noted; reset when the timing window opens
++    void ResetTimers ();
++    amrex::Vector<double> tm_kern, tm_fill, tm_sync, tm_avg, tm_cfl;
++    amrex::Vector<long> n_adv;
++    double tm_dt = 0.0, tm_diag = 0.0, tm_regrid = 0.0;
++    double window_start = -1.0, window_wall = 0.0;
++    int window_steps = 0;
++    int steps_per_coarse = 1;
++    amrex::Real sum_phi_start = 0.0, sum_phi_end = 0.0;
+ };
+ 
+ #endif
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.cpp b/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.cpp
+index 30144f3..3b5474f 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.cpp
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/AmrCoreAdv.cpp
+@@ -14,6 +14,10 @@
+ #include <AmrCoreAdv.H>
+ #include <Kernels.H>
+ 
++#include <AMReX.H>
++#include <cmath>
++#include <iomanip>
++
+ using namespace amrex;
+ 
+ // constructor - reads in parameters from inputs file
+@@ -88,6 +92,70 @@ AmrCoreAdv::AmrCoreAdv ()
+     // with the lev/lev-1 interface (and has grid spacing associated with lev-1)
+     // therefore flux_reg[0] is never actually used in the reflux operation
+     flux_reg.resize(nlevs_max+1);
++
++    // harness timers
++    tm_kern.resize(nlevs_max, 0.0);
++    tm_fill.resize(nlevs_max, 0.0);
++    tm_sync.resize(nlevs_max, 0.0);
++    tm_avg.resize(nlevs_max, 0.0);
++    tm_cfl.resize(nlevs_max, 0.0);
++    n_adv.resize(nlevs_max, 0);
++}
++
++void
++AmrCoreAdv::ResetTimers ()
++{
++    for (auto& x : tm_kern) { x = 0.0; }
++    for (auto& x : tm_fill) { x = 0.0; }
++    for (auto& x : tm_sync) { x = 0.0; }
++    for (auto& x : tm_avg)  { x = 0.0; }
++    for (auto& x : tm_cfl)  { x = 0.0; }
++    for (auto& x : n_adv)   { x = 0; }
++    tm_dt = 0.0; tm_diag = 0.0; tm_regrid = 0.0;
++    window_steps = 0;
++}
++
++// print the hierarchy counts, the timers and the window in a fixed, parseable format
++void
++AmrCoreAdv::ReportHarness () const
++{
++    // AMReX prints with 10 significant digits; the conservation sums use 17
++    amrex::Print() << "HARNESS_BEGIN\n";
++    amrex::Print() << "harness_version hyman2026local-S3-v2\n";
++    amrex::Print() << "amrex_version " << amrex::Version() << "\n";
++    amrex::Print() << "dim " << AMREX_SPACEDIM << "\n";
++    amrex::Print() << "schedule " << (do_subcycle ? "subcycle" : "global") << "\n";
++    amrex::Print() << "feature " << feature << "\n";
++    amrex::Print() << "tag_band " << tag_band << "\n";
++    amrex::Print() << "finest_level " << finest_level << "\n";
++    amrex::Print() << "ref_ratio " << (finest_level > 0 ? MaxRefRatio(0) : 1) << "\n";
++    amrex::Print() << "steps_per_coarse " << steps_per_coarse << "\n";
++    amrex::Print() << "window_steps " << window_steps << "\n";
++    amrex::Print() << "window_wall " << window_wall << "\n";
++    amrex::Print() << "tm_dt " << tm_dt << "\n";
++    amrex::Print() << "tm_diag " << tm_diag << "\n";
++    amrex::Print() << "tm_regrid " << tm_regrid << "\n";
++    amrex::Print().SetPrecision(17) << "sum_phi_start " << sum_phi_start << "\n";
++    amrex::Print().SetPrecision(17) << "sum_phi_end " << sum_phi_end << "\n";
++    amrex::Print() << "# level N B G Gcf dt n_adv kern fill sync avg cfl\n";
++    for (int lev = 0; lev <= finest_level; ++lev)
++    {
++        const BoxArray& ba = grids[lev];
++        long N = ba.numPts();
++        long B = ba.size();
++        long G = 0, Gcf = 0;
++        for (long i = 0; i < B; ++i) {
++            const Box gb = amrex::grow(ba[i], 3);
++            G += gb.numPts() - ba[i].numPts();
++            BoxList bl = ba.complementIn(gb);
++            for (const Box& b : bl) { Gcf += b.numPts(); }
++        }
++        amrex::Print() << "level " << lev << " " << N << " " << B << " " << G << " " << Gcf << " "
++                       << dt[lev] << " " << n_adv[lev] << " "
++                       << tm_kern[lev] << " " << tm_fill[lev] << " " << tm_sync[lev] << " "
++                       << tm_avg[lev] << " " << tm_cfl[lev] << "\n";
++    }
++    amrex::Print() << "HARNESS_END" << std::endl;
+ }
+ 
+ AmrCoreAdv::~AmrCoreAdv ()
+@@ -101,11 +169,26 @@ AmrCoreAdv::Evolve ()
+     Real cur_time = t_new[0];
+     int last_plot_file_step = 0;
+ 
++    // harness: one coarse interval is 1 step when subcycling and Q = r^L steps under
++    // global stepping; the timing window opens when the first coarse interval ends
++    steps_per_coarse = 1;
++    if (!do_subcycle) {
++        for (int lev = 1; lev <= finest_level; ++lev) { steps_per_coarse *= MaxRefRatio(lev-1); }
++    }
++    ResetTimers();
++    window_start = -1.0;
++
+     for (int step = istep[0]; step < max_step && cur_time < stop_time; ++step)
+     {
+-        amrex::Print() << "\nCoarse STEP " << step+1 << " starts ..." << std::endl;
++        if (Verbose()) {
++            amrex::Print() << "\nCoarse STEP " << step+1 << " starts ..." << std::endl;
++        }
+ 
+-        ComputeDt();
++        {
++            const double t0 = amrex::second();
++            ComputeDt();
++            tm_dt += amrex::second() - t0;
++        }
+ 
+         int lev = 0;
+         int iteration = 1;
+@@ -115,18 +198,26 @@ AmrCoreAdv::Evolve ()
+             timeStepNoSubcycling(cur_time, iteration);
+ 
+         cur_time += dt[0];
++        if (window_start >= 0.0) { ++window_steps; }
+ 
+-        // sum phi to check conservation
+-        Real sum_phi = phi_new[0].sum();
+-
+-        amrex::Print() << "Coarse STEP " << step+1 << " ends." << " TIME = " << cur_time
+-                       << " DT = " << dt[0] << " Sum(Phi) = " << sum_phi << std::endl;
++        if (Verbose()) {
++            amrex::Print() << "Coarse STEP " << step+1 << " ends." << " TIME = " << cur_time
++                           << " DT = " << dt[0] << std::endl;
++        }
+ 
+         // sync up time
+         for (lev = 0; lev <= finest_level; ++lev) {
+             t_new[lev] = cur_time;
+         }
+ 
++        // open the timing window at the end of the warm-up coarse interval; the
++        // conservation sum is taken outside the window
++        if (step+1 == steps_per_coarse) {
++            sum_phi_start = phi_new[0].sum();
++            ResetTimers();
++            window_start = amrex::second();
++        }
++
+         if (plot_int > 0 && (step+1) % plot_int == 0) {
+             last_plot_file_step = step+1;
+             WritePlotFile();
+@@ -147,6 +238,10 @@ AmrCoreAdv::Evolve ()
+         if (cur_time >= stop_time - 1.e-6*dt[0]) break;
+     }
+ 
++    // close the timing window
++    window_wall = (window_start >= 0.0) ? amrex::second() - window_start : 0.0;
++    sum_phi_end = phi_new[0].sum();
++
+     if (plot_int > 0 && istep[0] > last_plot_file_step) {
+         WritePlotFile();
+     }
+@@ -294,55 +389,70 @@ void AmrCoreAdv::MakeNewLevelFromScratch (int lev, Real time, const BoxArray& ba
+     }
+ }
+ 
+-// tag all cells for refinement
++// tag cells for refinement (hyman2026local harness: geometric tagging)
++// a cell of level lev is tagged when its center lies within tag_band * dx_lev of the
++// feature, the rule of Section 3.3 of the note; the feature does not move, so the
++// hierarchy is fixed once it is built
+ // overrides the pure virtual function in AmrCore
+ void
+ AmrCoreAdv::ErrorEst (int lev, TagBoxArray& tags, Real /*time*/, int /*ngrow*/)
+ {
+-    static bool first = true;
+-    static Vector<Real> phierr;
+-
+-    // only do this during the first call to ErrorEst
+-    if (first)
+-    {
+-        first = false;
+-        // read in an array of "phierr", which is the tagging threshold
+-        // in this example, we tag values of "phi" which are greater than phierr
+-        // for that particular level
+-        // in subroutine state_error, you could use more elaborate tagging, such
+-        // as more advanced logical expressions, or gradients, etc.
+-        ParmParse pp("adv");
+-        int n = pp.countval("phierr");
+-        if (n > 0) {
+-            pp.getarr("phierr", phierr, 0, n);
+-        }
+-    }
+-
+-    if (lev >= phierr.size()) return;
+-
+-//    const int clearval = TagBox::CLEAR;
+-    const int   tagval = TagBox::SET;
+-
+-    const MultiFab& state = phi_new[lev];
+-
+-#ifdef AMREX_USE_OMP
+-#pragma omp parallel if(Gpu::notInLaunchRegion())
++    int kind = -1;
++    if      (feature == "point")                     { kind = 0; }
++    else if (feature == "circle")                    { kind = 1; }
++    else if (feature == "sphere")                    { kind = 2; }
++    else if (feature == "ball" || feature == "disk") { kind = 3; }
++    else { amrex::Abort("adv.feature must be point, circle, sphere, ball or disk"); }
++
++    const char tagval = TagBox::SET;
++    const auto problo = Geom(lev).ProbLoArray();
++    const auto dx     = Geom(lev).CellSizeArray();
++    const Real band   = tag_band * dx[0];
++    const Real R      = feature_radius;
++    const Real cx = feature_center[0];
++    const Real cy = feature_center[1];
++#if (AMREX_SPACEDIM == 3)
++    const Real cz = feature_center[2];
++    const Real tilt = feature_tilt;
++#else
++    const Real cz = 0.0;
++    const Real tilt = 0.0;   // in 2D the circle lies in the plane
+ #endif
++    const Real ct = std::cos(tilt), st = std::sin(tilt);
++
++    for (MFIter mfi(tags); mfi.isValid(); ++mfi)
+     {
++        const Box& bx = mfi.validbox();
++        const auto tagfab = tags.array(mfi);
+ 
+-        for (MFIter mfi(state,TilingIfNotGPU()); mfi.isValid(); ++mfi)
++        amrex::ParallelFor(bx,
++        [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept
+         {
+-            const Box& bx  = mfi.tilebox();
+-            const auto statefab = state.array(mfi);
+-            const auto tagfab  = tags.array(mfi);
+-            Real phierror = phierr[lev];
+-
+-            amrex::ParallelFor(bx,
+-            [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept
+-            {
+-                state_error(i, j, k, tagfab, statefab, phierror, tagval);
+-            });
+-        }
++            const Real vx = problo[0] + (i+0.5)*dx[0] - cx;
++            const Real vy = problo[1] + (j+0.5)*dx[1] - cy;
++#if (AMREX_SPACEDIM == 3)
++            const Real vz = problo[2] + (k+0.5)*dx[2] - cz;
++#else
++            amrex::ignore_unused(k, cz);
++            const Real vz = 0.0;
++#endif
++            const Real rad = std::sqrt(vx*vx + vy*vy + vz*vz);
++            Real dist;
++            if (kind == 0) {
++                dist = rad;
++            } else if (kind == 1) {
++                // circle of radius R in the plane through c, rotated by tilt about the x-axis
++                const Real y = ct*vy + st*vz;
++                const Real z = -st*vy + ct*vz;
++                const Real rr = std::sqrt(vx*vx + y*y);
++                dist = std::sqrt((rr-R)*(rr-R) + z*z);
++            } else if (kind == 2) {
++                dist = std::abs(rad - R);
++            } else {
++                dist = amrex::max(rad - R, Real(0.0));
++            }
++            if (dist <= band) { tagfab(i,j,k) = tagval; }
++        });
+     }
+ }
+ 
+@@ -373,6 +483,17 @@ AmrCoreAdv::ReadParameters ()
+         pp.query("cfl", cfl);
+         pp.query("do_reflux", do_reflux);
+         pp.query("do_subcycle", do_subcycle);
++
++        // harness parameters
++        pp.query("feature", feature);
++        pp.queryarr("feature_center", feature_center);
++        pp.query("feature_radius", feature_radius);
++        pp.query("feature_tilt", feature_tilt);
++        pp.query("tag_band", tag_band);
++        pp.queryarr("vel", adv_vel);
++        if (feature_center.size() < AMREX_SPACEDIM || adv_vel.size() < AMREX_SPACEDIM) {
++            amrex::Abort("adv.feature_center and adv.vel need AMREX_SPACEDIM values");
++        }
+     }
+ }
+ 
+@@ -546,7 +667,9 @@ AmrCoreAdv::timeStepWithSubcycling (int lev, Real time, int iteration)
+                 // regrid could add newly refine levels (if finest_level < max_level)
+                 // so we save the previous finest level index
+                 int old_finest = finest_level;
++                const double t0 = amrex::second();
+                 regrid(lev, time);
++                tm_regrid += amrex::second() - t0;
+ 
+                 // mark that we have regridded this level already
+                 for (int k = lev; k <= finest_level; ++k) {
+@@ -574,7 +697,11 @@ AmrCoreAdv::timeStepWithSubcycling (int lev, Real time, int iteration)
+ 
+     Real t_nph = t_old[lev] + 0.5*dt[lev];
+ 
+-    DefineVelocityAtLevel(lev, t_nph);
++    {
++        const double t0 = amrex::second();
++        DefineVelocityAtLevel(lev, t_nph);
++        tm_kern[lev] += amrex::second() - t0;
++    }
+     AdvancePhiAtLevel(lev, time, dt[lev], iteration, nsubsteps[lev]);
+ 
+     ++istep[lev];
+@@ -596,10 +723,16 @@ AmrCoreAdv::timeStepWithSubcycling (int lev, Real time, int iteration)
+         if (do_reflux)
+         {
+             // update lev based on coarse-fine flux mismatch
++            const double t0 = amrex::second();
+             flux_reg[lev+1]->Reflux(phi_new[lev], 1.0, 0, 0, phi_new[lev].nComp(), geom[lev]);
++            tm_sync[lev] += amrex::second() - t0;
+         }
+ 
+-        AverageDownTo(lev); // average lev+1 down to lev
++        {
++            const double t0 = amrex::second();
++            AverageDownTo(lev); // average lev+1 down to lev
++            tm_avg[lev] += amrex::second() - t0;
++        }
+     }
+ 
+ }
+@@ -612,7 +745,9 @@ AmrCoreAdv::timeStepNoSubcycling (Real time, int iteration)
+     {
+         if (istep[0] % regrid_int == 0)
+         {
++            const double t0 = amrex::second();
+             regrid(0, time);
++            tm_regrid += amrex::second() - t0;
+         }
+     }
+ 
+@@ -625,11 +760,22 @@ AmrCoreAdv::timeStepNoSubcycling (Real time, int iteration)
+         }
+     }
+ 
+-    DefineVelocityAllLevels(time+0.5_rt*dt[0]);
++    for (int lev = 0; lev <= finest_level; ++lev)
++    {
++        const double t0 = amrex::second();
++        DefineVelocityAtLevel(lev, time+0.5_rt*dt[0]);
++        tm_kern[lev] += amrex::second() - t0;
++    }
+     AdvancePhiAllLevels (time, dt[0], iteration);
+ 
+     // Make sure the coarser levels are consistent with the finer levels
+-    AverageDown ();
++    // (the same operation as AverageDown(), timed per level)
++    for (int lev = finest_level-1; lev >= 0; --lev)
++    {
++        const double t0 = amrex::second();
++        AverageDownTo(lev);
++        tm_avg[lev] += amrex::second() - t0;
++    }
+ 
+     for (int lev = 0; lev <= finest_level; lev++)
+         ++istep[lev];
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/DefineVelocity.cpp b/ExampleCodes/Amr/Advection_AmrCore/Source/DefineVelocity.cpp
+index 5d32490..b640601 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/DefineVelocity.cpp
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/DefineVelocity.cpp
+@@ -13,64 +13,12 @@ AmrCoreAdv::DefineVelocityAllLevels (Real time)
+ }
+ 
+ void
+-AmrCoreAdv::DefineVelocityAtLevel (int lev, Real time)
++AmrCoreAdv::DefineVelocityAtLevel (int lev, Real /*time*/)
+ {
+-    const auto dx = geom[lev].CellSizeArray();
+-
+-#ifdef AMREX_USE_OMP
+-#pragma omp parallel if (Gpu::notInLaunchRegion())
+-#endif
++    // hyman2026local harness: a constant velocity adv.vel replaces the time-dependent swirl,
++    // so every level sees the same maximum speed and the CFL step on level lev is dt_0 r^-lev
++    for (int idim = 0; idim < AMREX_SPACEDIM; ++idim)
+     {
+-        for (MFIter mfi(phi_new[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)
+-        {
+-
+-        // ======== GET FACE VELOCITY =========
+-            GpuArray<Box, AMREX_SPACEDIM> nbx;
+-            AMREX_D_TERM(nbx[0] = mfi.nodaltilebox(0);,
+-                         nbx[1] = mfi.nodaltilebox(1);,
+-                         nbx[2] = mfi.nodaltilebox(2););
+-
+-            AMREX_D_TERM(const Box& ngbxx = amrex::grow(mfi.nodaltilebox(0),1);,
+-                         const Box& ngbxy = amrex::grow(mfi.nodaltilebox(1),1);,
+-                         const Box& ngbxz = amrex::grow(mfi.nodaltilebox(2),1););
+-
+-            GpuArray<Array4<Real>, AMREX_SPACEDIM> vel{ AMREX_D_DECL( facevel[lev][0].array(mfi),
+-                                                                      facevel[lev][1].array(mfi),
+-                                                                      facevel[lev][2].array(mfi)) };
+-
+-            const Box& psibox = Box(IntVect(AMREX_D_DECL(std::min(ngbxx.smallEnd(0)-1, ngbxy.smallEnd(0)-1),
+-                                                         std::min(ngbxx.smallEnd(1)-1, ngbxy.smallEnd(1)-1),
+-                                                         0)),
+-                                    IntVect(AMREX_D_DECL(std::max(ngbxx.bigEnd(0),   ngbxy.bigEnd(0)+1),
+-                                                         std::max(ngbxx.bigEnd(1)+1, ngbxy.bigEnd(1)),
+-                                                         0)));
+-
+-            FArrayBox psifab(psibox, 1);
+-            Elixir psieli = psifab.elixir();
+-            Array4<Real> psi = psifab.array();
+-            GeometryData geomdata = geom[lev].data();
+-
+-            amrex::launch(psibox,
+-            [=] AMREX_GPU_DEVICE (const Box& tbx)
+-            {
+-                get_face_velocity_psi(tbx, time, psi, geomdata);
+-            });
+-
+-            amrex::ParallelFor
+-                (AMREX_D_DECL(ngbxx,ngbxy,ngbxz),
+-                 AMREX_D_DECL(
+-                     [=] AMREX_GPU_DEVICE (int i, int j, int k)
+-                     {
+-                         get_face_velocity_x(i, j, k, vel[0], psi, dx[1]);
+-                     },
+-                     [=] AMREX_GPU_DEVICE (int i, int j, int k)
+-                     {
+-                         get_face_velocity_y(i, j, k, vel[1], psi, dx[0]);
+-                     },
+-                     [=] AMREX_GPU_DEVICE (int i, int j, int k)
+-                     {
+-                         get_face_velocity_z(i, j, k, vel[2]);
+-                     }));
+-        }
++        facevel[lev][idim].setVal(adv_vel[idim]);   // valid and ghost faces
+     }
+ }
+diff --git a/ExampleCodes/Amr/Advection_AmrCore/Source/main.cpp b/ExampleCodes/Amr/Advection_AmrCore/Source/main.cpp
+index cd9f4be..b3c90d2 100644
+--- a/ExampleCodes/Amr/Advection_AmrCore/Source/main.cpp
++++ b/ExampleCodes/Amr/Advection_AmrCore/Source/main.cpp
+@@ -30,6 +30,9 @@ int main(int argc, char* argv[])
+         // advance solution to final time
+         amr_core_adv.Evolve();
+ 
++        // hyman2026local harness: counts, timers and the timing window
++        amr_core_adv.ReportHarness();
++
+         // wallclock time
+         auto end_total = amrex::second() - strt_total;
+ 

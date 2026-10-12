@@ -1,0 +1,5 @@
+# Versions used to produce the paper's numbers, tables and figures (Python 3.13).
+numpy==2.5.3
+matplotlib==3.11.2
+scipy==1.18.1
+pyyaml==6.0.3   # only for hyman2026local_render_readme.py (renders STATUS.md)

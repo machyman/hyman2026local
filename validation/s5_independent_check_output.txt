@@ -1,0 +1,45 @@
+T1 sha256 11d2e03060d6de2b0d26e76da09690e468fdff53851eda638bf2905fa8cc9721 True
+status counts Counter({'ok': 190})
+rerun cells [('d2_circle_L2_r2', 'subcycle'), ('d2_circle_L3_r2', 'global'), ('d2_circle_L3_r2', 'subcycle'), ('d2_disk_L2_r2', 'global')]
+kept runs 170 [(('d3_circle_L3_r2', 'global'), 5), (('d3_circle_L3_r2', 'subcycle'), 5), (('d3_point_L3_r2', 'global'), 5)] 5
+max |T-K-O| over kept runs 0.0
+T6 counts identical (kept, N,B,G): True  all rows N,B: True  n_adv consistent: True
+T6 H<0 all: True max H -0.13986001299999984
+  d2_circle_L2_r2    heldout  S=1.3668 H=-0.2749 x=-0.286 n=5/5
+  d2_circle_L3_r2    heldout  S=1.5940 H=-0.6008 x=-0.425 n=5/5
+  d2_circle_L4_r2    heldout  S=1.5044 H=-0.6009 x=-0.450 n=5/5
+  d2_disk_L2_r2      training S=1.2912 H=-0.3354 x=-0.214 n=5/5
+  d2_disk_L3_r2      training S=1.3873 H=-0.6497 x=-0.394 n=5/5
+  d2_disk_L4_r2      training S=1.3156 H=-1.0947 x=-0.333 n=5/5
+  d2_point_L2_r2     training S=2.1724 H=-0.4332 x=-0.128 n=5/5
+  d2_point_L3_r2     training S=3.6777 H=-1.5216 x=-0.305 n=5/5
+  d2_point_L4_r2     training S=5.2317 H=-1.8282 x=-0.439 n=5/5
+  d3_ball_L2_r2      training S=1.2133 H=-0.1720 x=-0.087 n=5/5
+  d3_ball_L3_r2      training S=1.1824 H=-0.9013 x=-0.098 n=5/5
+  d3_circle_L2_r2    heldout  S=1.2804 H=-0.1812 x=-0.092 n=5/5
+  d3_circle_L3_r2    heldout  S=1.5205 H=-0.3689 x=-0.161 n=5/5
+  d3_point_L2_r2     training S=2.0916 H=-0.2332 x=-0.060 n=5/5
+  d3_point_L3_r2     training S=2.6688 H=-0.8143 x=-0.193 n=5/5
+  d3_sphere_L2_r2    heldout  S=1.1906 H=-0.1399 x=-0.088 n=5/5
+  d3_sphere_L3_r2    heldout  S=1.2217 H=-0.6500 x=-0.098 n=5/5
+train 10 held 7
+T3 max rel diff JSON-coef recompute vs frozen (all 7 columns): 0
+T4 dim 2 kernel [2.42804678e-08] json [2.42804678e-08]
+      global [0.00000000e+00 0.00000000e+00 1.23012339e-08] json [0.00000000e+00 0.00000000e+00 1.23012339e-08]
+      subcycle [2.62606380e-05 0.00000000e+00 1.30139029e-08] json [2.62606380e-05 0.00000000e+00 1.30139029e-08]
+T4 dim 3 kernel [8.02638569e-08] json [8.02638569e-08]
+      global [0.00000000e+00 0.00000000e+00 2.49865079e-08] json [0.00000000e+00 0.00000000e+00 2.49865079e-08]
+      subcycle [6.88251302e-05 2.78933142e-08 2.77068533e-09] json [6.88251302e-05 2.78933142e-08 2.77068533e-09]
+T4 max coef rel diff (abs if json zero): 2.209249988820615e-14
+T4 max rel diff refit S_hat vs frozen: 3.157589810412801e-16
+T2 d2_circle_L2_r2    S=1.3668 Shat=1.4634 e=0.0706
+T2 d2_circle_L3_r2    S=1.5940 Shat=1.5721 e=0.0137
+T2 d2_circle_L4_r2    S=1.5044 Shat=1.6119 e=0.0715
+T2 d3_circle_L2_r2    S=1.2804 Shat=1.2790 e=0.0011
+T2 d3_circle_L3_r2    S=1.5205 Shat=1.4064 e=0.0750
+T2 d3_sphere_L2_r2    S=1.1906 Shat=1.0949 e=0.0804
+T2 d3_sphere_L3_r2    S=1.2217 Shat=1.1513 e=0.0577
+T2 median e 0.07063588531681309 max e 0.0803694108008103
+T5 K1+O3 median 0.123661 reported 0.123661  max per-config diff 5.00e-16
+T5 K1+O1 median 0.218628 reported 0.218628  max per-config diff 1.67e-16
+T5 K2+O3 median 0.124917 reported 0.124917  max per-config diff 2.50e-16

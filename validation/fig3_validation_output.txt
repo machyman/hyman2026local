@@ -1,0 +1,21 @@
+Figure 3 (a): pair K1+O3
+   training d2_disk_L2_r2    S 1.2912  S_hat(LOO) 1.1209  e 0.1319
+   training d2_disk_L3_r2    S 1.3873  S_hat(LOO) 1.1672  e 0.1587
+   training d2_disk_L4_r2    S 1.3156  S_hat(LOO) 1.1638  e 0.1154
+   training d2_point_L2_r2   S 2.1724  S_hat(LOO) 3.0205  e 0.3904
+   training d2_point_L3_r2   S 3.6777  S_hat(LOO) 4.2786  e 0.1634
+   training d2_point_L4_r2   S 5.2317  S_hat(LOO) 5.6575  e 0.0814
+   training d3_ball_L2_r2    S 1.2133  S_hat(LOO) 1.1769  e 0.0300
+   training d3_ball_L3_r2    S 1.1824  S_hat(LOO) 1.0474  e 0.1142
+   training d3_point_L2_r2   S 2.0916  S_hat(LOO) 2.6313  e 0.2580
+   training d3_point_L3_r2   S 2.6688  S_hat(LOO) 2.6555  e 0.0050
+   held out d2_circle_L2_r2  S 1.3668  S_hat(frozen) 1.4634  e 0.0706
+   held out d2_circle_L3_r2  S 1.5940  S_hat(frozen) 1.5721  e 0.0137
+   held out d2_circle_L4_r2  S 1.5044  S_hat(frozen) 1.6119  e 0.0715
+   held out d3_circle_L2_r2  S 1.2804  S_hat(frozen) 1.2790  e 0.0011
+   held out d3_circle_L3_r2  S 1.5205  S_hat(frozen) 1.4064  e 0.0750
+   held out d3_sphere_L2_r2  S 1.1906  S_hat(frozen) 1.0949  e 0.0804
+   held out d3_sphere_L3_r2  S 1.2217  S_hat(frozen) 1.1513  e 0.0577
+   median held-out error 0.0706 (95% CI 0.0211 to 0.0823)
+   palette dE2000: 2D-3D 48.5, 2D-band 41.1, 2D-white 43.8, 2D-ink2 30.9, 3D-band 33.7, 3D-white 39.1, 3D-ink2 36.8, band-white 9.4, band-ink2 45.2, white-ink2 52.5
+   sha256 hyman2026local_fig3_validation.png a3d7d4ecad5abfbd8e0208426e882f9abfafe092b2f655fea88e5a354a8aa5ac

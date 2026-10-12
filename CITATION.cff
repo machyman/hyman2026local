@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "When Is Local Time Stepping Worthwhile? A Cost Analysis for Nested Adaptive Mesh Refinement"
+authors:
+  - family-names: Hyman
+    given-names: James M.
+    affiliation: "Department of Mathematics, Tulane University"
+    orcid: "https://orcid.org/0000-0001-5247-5794"
+version: v1_7_0
+license: MIT
+repository-code: "https://github.com/machyman/hyman2026local"
+preferred-citation:
+  type: article
+  title: "When Is Local Time Stepping Worthwhile? A Cost Analysis for Nested Adaptive Mesh Refinement"
+  authors:
+    - family-names: Hyman
+      given-names: James M.
+      affiliation: "Department of Mathematics, Tulane University"
+      orcid: "https://orcid.org/0000-0001-5247-5794"
+  year: 2026
+  notes: "arXiv identifier TBD (math.NA, cross-list physics.comp-ph); replace TBD after posting."

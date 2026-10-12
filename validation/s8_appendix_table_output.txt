@@ -1,0 +1,6 @@
+A1 Table A1: 17 rows written to validation/tableA1_rows.tex
+   x_C -0.422 to -0.003; negative in 17 of 17
+   without the dt difference: -0.250 to +0.083; positive in 6 of 17: d2_point_L2_r2, d3_ball_L3_r2, d3_circle_L2_r2, d3_point_L2_r2, d3_sphere_L2_r2, d3_sphere_L3_r2
+   without the dt and cfl differences: -0.305 to +0.041; positive in 3 of 17: d2_point_L2_r2, d3_circle_L2_r2, d3_point_L2_r2
+   counterfactual still below beta (subcycling would still win): without dt 17 of 17; without dt and cfl 17 of 17
+   smallest margin beta - x without dt: 0.087 (d3_ball_L3_r2); without dt and cfl: 0.156 (d3_ball_L3_r2)

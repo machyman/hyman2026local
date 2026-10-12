@@ -1,0 +1,576 @@
+manuscript:
+  short_id: hyman2026local
+  title: "When Is Local Time Stepping Worthwhile? A Cost Analysis for Nested Adaptive Mesh Refinement"
+  subtitle: null
+  authors:
+    - name: James M. Hyman
+      affiliation: Department of Mathematics, Tulane University
+      email: mhyman@tulane.edu
+      orcid: 0000-0001-5247-5794
+      is_corresponding: true
+  main_file: hyman2026local_v1_7_0.tex
+  si_file: null
+  current_version: v1_7_0
+  current_si_version: null
+  current_pages: 25
+  current_si_pages: null
+  last_compiled: 2026-10-12
+  compile_state:
+    errors: 0
+    undef_refs: 0
+    overfull_hboxes: 0
+  mrep_score: 78.5                  # mean of two cold GSR v3 agents at S9 on v1_6_0 before the diff-check fixes, STS 79 and 78 (E-points gated below 85); 78 at S8 on v1_5_0 (one agent); 80 at S7 on v1_4_1 (another agent); 77 at the S2 MREP freeze on v1_2_1
+  bibliography:
+    bib_file: hyman2026local.bib
+    bib_sha256: ef960212fbec062c8f842fd6b1d2ff4dff84c41dee24c2e456dddcd1bf0988c6
+    entries: 35
+    style: unsrtnat
+
+target_venue:
+  journal: "arXiv only for this cycle (GATE A ruling A7, 2026-10-08); a journal is a deferred option"
+  publisher: null
+  submission_system: null
+  url: null
+  blinding: open
+  authors_anonymized: false
+  page_limit: null
+  word_limit: null
+  format_requirements:
+    - 12pt article, 0.75in margins (house default)
+    - natbib numeric, unsrtnat style; .bbl shipped with the arXiv source
+    - arXiv abstract metadata limit 1920 characters (v1_7_0 abstract, unchanged since v1_5_0, 1,642 characters of source, 1,670 with the S_ideal macro expanded)
+  required_documents:
+    - manuscript_source
+    - bbl
+    - figure_pdfs (fig1, fig2, fig3)
+  format_class: article
+  backup_journals: []
+
+distribution:
+  arxiv:
+    posted: false
+    identifier: null
+    url: null
+    posted_date: null
+    primary_category: math.NA        # confirmed by Mac (\GO at the branch gate, 2026-10-08)
+    cross_list:
+      - physics.comp-ph              # confirmed by Mac (\GO at the branch gate, 2026-10-08)
+    package_built: true
+    package_path: hyman2026local_v1_6_1_arXiv.tar.gz
+    package_built_date: 2026-10-10
+  overleaf:                         # COR v4.1 package (S10)
+    package_built: true
+    package_path: hyman2026local_COR_2026-10-10.zip
+    package_built_date: 2026-10-10
+  github:
+    created: false                  # as recorded at S11; observed public on 2026-10-12 with the COR v1_6_1 contents (M12.5), pending Mac's confirmation
+    url: https://github.com/machyman/hyman2026local
+    visibility: planned
+    canonical_yaml_url: null
+    package_built: true
+    package_path: hyman2026local_2026-10-10.zip
+    package_built_date: 2026-10-10
+  zenodo:
+    minted: false
+    doi: null
+    url: null
+  preprint_servers_other: []
+
+submission:
+  status: not_yet_submitted
+  prepared_date: null
+  submitted_date: null
+  manuscript_id: null
+  current_round: 0
+  editor_assigned: null
+  decision_expected_by: null
+  notes: "S12 (2026-10-12, branch 10): v1_7_0 credits Li and Hyman, LA-UR-06-8741 (G21 to G24); COR package, arXiv tarball and CGR archive rebuilt for v1_7_0; nothing posted or pushed by Claude. Observed 2026-10-12 (M12.5): github.com/machyman/hyman2026local is public and serves the COR v1_6_1 package contents, without the reproduce script or validation/; no arXiv listing found; to be confirmed by Mac. Branch 9 close (2026-10-12): Mac recovered Li and Hyman, LA-UR-06-8741, which derives the note's two-level formula and tests it; v1_6_1 is held from posting; rulings G21 to G24 add S12 (credit, the §3.4 correction, the citation, the accuracy sentence) in v1_7_0, with the packages rebuilt. S11 CGR v4.1.1 (2026-10-10, branch 9): repository archive hyman2026local_2026-10-10.zip (430 files, MIT license, CITATION.cff with arXiv TBD); CGR-Audit 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW; CGR-FreshExtract PASS; manuscript-github source-layer gate PASS; nothing pushed. S10 COR v4.1 (2026-10-10, branch 9): Mac confirmed G12 at 13:00, so v1_6_1 replaces the AUTHOR note with the statement of responsibility and is dated October 10, 2026 (24 pp, compile clean); G18(a) covers the HIGH both S9 scorers rank first (G20); MIT license for the repository (S11). COR Phase 1 (2026-10-10, branch 9): Mac accepted the recorded state ('accept \\GO', 07:52): not submitted, not on arXiv, no GitHub repository yet, no referee reports, no companion papers; public checks agree (M10.8). S10 in progress: v1_6_1 (z-bump) moves Table 3's float above the paragraph that cites it (L8, M10.9), no word changed; the G12 attestation not given, so the COR bundle waits. Branch gate after S9 (2026-10-09, branch 8): Mac approved cleanup proposal 2026-10-09 run 3 by name (3 files: the two 2026-10-09 run 1 archives and the top-level v1_5_0 PDF, whose copy is in archive/v1_5_0/) and sent \\GO at 20:09, accepting G18(a): COR v4.1 next (S10) at the current readiness, with the S9 scorers' converged architecture and G16(b) recorded for a journal version (E-S9, E-S6); the G12 attestation not given. S9 (2026-10-09, branch 8): v1_6_0 (y-bump, 24 pp) restructures v1_5_0 under G17(b): Section 3.2 split into Growth law, Budgets for feature-following hierarchies and Agreement with earlier estimates; published overheads moved to open Section 4 (Published overheads and what the work model leaves out); an unnumbered measures table in 5.1; the Conclusions' first paragraph in three sentences; glosses of AMReX and the box-counting law. Two cold GSR scorers: STS 79 and 78, mean 78.5 (target 90 not met); diff check 1 HIGH and 2 MEDIUM fixed, follow-up clean of HIGH and MEDIUM. Registry: fig2 PNG hash set to the on-disk file (M9.4). Branch gate after S8 (2026-10-09, branch 7): Mac approved cleanup proposal 2026-10-09 run 2 by name (executed for 3 files: the two run5 archives and the top-level v1_4_1 PDF, whose copy is in archive/v1_4_1/; the two .pyc caches are under the protected validation/ and stay) and sent \\GO at 13:51, accepting G17(b), a second text-only restructuring as S9 (COR S10, CGR S11); the G12 attestation not given. S8 (2026-10-09, branch 7): v1_5_0 (y-bump, 24 pp) restructures v1_4_1 under G15(a′): abstract novelty first, decision box in Section 1, published overheads as Section 3.3, Testing the model folded into 5.1, Section 5 cut with protocol detail in Appendix A, Table A1 counterfactuals, Figure 1 redrawn; cold GSR STS 78 (target 90 not met); diff check 5 HIGH and 7 MEDIUM fixed, follow-up 2 MEDIUM fixed. Branch gate after S7 (2026-10-09, branch 6): Mac approved cleanup run 6 by name (3 files: the two run4 archives and the top-level v1_4_0 PDF, whose copy is in archive/v1_4_0/); G15 (restructuring for readiness), G16 (natural near-break-even design) and the G12 attestation not yet ruled, carried to S8 kickoff. S7 (2026-10-09, branch 6): v1_4_1 (z-bump, 22 pp) adds the AI-use sentence on Section 5 (G10), the repository URL (G11), referee 3's ten LOW items (G14) and a Section 5.3 explanation of why no one-core run came near break-even (G9 prime (a); E-S6 kept for a journal version after the injected-cost design was withdrawn as uninformative). The responsibility marker stays until Mac attests (G12). Cold GSR v3 score STS 80, below the 90 target; restructuring proposed as G15. Diff check: no HIGH or MEDIUM remain. Branch gate after S6 (2026-10-08, branch 5): Mac approved cleanup run 5 by name (3 files: the two run3 archives and the top-level v1_3_2 PDF, whose copy is in archive/v1_3_2/); E-S6 not yet ruled, carried to S7 kickoff. S6 (2026-10-08, branch 5): v1_4_0 adds Section 5, a paired test in AMReX, with Table 5 and Figure 3, and AMReX budgets on Figure 1 (rulings G4 to G8, all option (a)). Pre-specified result: the frozen model predicts held-out speedups with median error 0.071 (PASS); post hoc, the update counts alone do as well (0.073) except for points, the model misses the components, and no configuration nears break-even. Overhead: x_C (Section 2 definition) -0.42 to -0.003, negative in all 17; time-ratio y -0.11 to 0.19, positive in 12. VER role pass on the 16 S2 entries: 0 HIGH, fixes applied. Cold referees: 4 HIGH, then 2 HIGH, then none after revision. ASM bands met. Two AUTHOR markers (repository URL; responsibility statement) block arXiv posting. arXiv categories math.NA with cross-list physics.comp-ph confirmed by Mac (2026-10-08). GATE C ruling C1: run the AMReX paired validation (Plan S3-S5) before posting. S5 (2026-10-08): the pre-registered held-out test passes R1.2 (median error 0.071, 95% CI 0.021 to 0.082; no miss above 20%); the manuscript does not report it until S6. Posting remains Mac's decision."
+
+referee_history: []
+
+companion_papers: []
+
+assets:
+  summary:
+    figures_total: 3
+    tables_total: 6
+    deposited: 9
+    awaited: 0
+    external: 0
+    unhashed: 0
+    last_integrity_check: 2026-10-10
+    integrity_status: pass
+  protected_extra:
+    - hyman2026local.bib
+    - hyman2026local_v1_3_2.bbl
+    - hyman2026local_v1_4_0.bbl
+    - hyman2026local_v1_3_2_arXiv.tar.gz
+    - archive/v1_2_0/
+    - archive/v1_2_1/
+    - archive/v1_3_0/
+    - archive/v1_3_1/
+    - archive/v1_4_1/
+    - archive/v1_5_0/
+    - hyman2026local_v1_5_0.tex
+    - hyman2026local_v1_5_0.bbl
+    - HANDOFF_hyman2026local_Session7.md
+    - hyman2026local_Session8_Report.md
+    - hyman2026local_v1_4_1.tex
+    - hyman2026local_ImprovementMemo_v1_2_0.md
+    - hyman2026local_MasterPlan.md
+    - hyman2026local_render_readme.py
+    - hyman2026local_MREP_Kit.zip
+    - hyman2026local_Session1_Report.md
+    - hyman2026local_Session2_Report.md
+    - HANDOFF_hyman2026local_Session1.md
+    - HANDOFF_hyman2026local_Session2.md
+    - HANDOFF_hyman2026local_Session4.md
+    - HANDOFF_hyman2026local_Session5.md
+    - protocols/
+    - archive/branch1_superseded/
+    - archive/amrstepping_v1_1_0_chatgpt_package.zip
+    - archive/amrstepping_pilot_diagnosis.md
+    - archive/amrstepping_pilot_diagnosis.py
+    - verification/
+    - validation/
+    - hyman2026local_Session3_Report.md
+    - hyman2026local_Session4_Report.md
+    - hyman2026local_Session5_Report.md
+    - recovered_scratchpad_branch3/
+    - archive/v1_3_2/
+    - archive/v1_4_0/
+    - hyman2026local_v1_3_2.tex
+    - hyman2026local_v1_4_0.tex
+    - hyman2026local_v1_4_1.bbl
+    - HANDOFF_hyman2026local_Session6.md
+    - hyman2026local_Session6_Report.md
+    - hyman2026local_Session7_Report.md
+    - hyman2026local_v1_6_0.tex
+    - hyman2026local_v1_6_0.bbl
+    - archive/v1_6_0/
+    - recovered_scratchpad_branch8/
+    - hyman2026local_COR_2026-10-10.zip
+    - hyman2026local_v1_6_1_arXiv.tar.gz
+    - hyman2026local_v1_6_1_arXiv_metadata.txt
+    - HANDOFF_hyman2026local_Session8.md
+    - hyman2026local_Session9_Report.md
+    - hyman2026local_2026-10-10.zip
+    - hyman2026local_Session10_Report.md
+    - references/
+    - HANDOFF_hyman2026local_Session9.md
+  items:
+    - id: fig1
+      kind: figure
+      label: fig:budget
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir ."
+      inputs: []
+      params:
+        seed: null
+        notes: "Section F; deterministic; exact rational arithmetic; no random numbers"
+      software:
+        - "python 3.13"
+        - "numpy 2.5.3"
+        - "matplotlib 3.11.2"
+      outputs:
+        - path: hyman2026local_fig1_budget.pdf
+          sha256: ee3875491b9a20da3ce1cadee52845a51cf458164f767c9975df52f4e4a943ec
+        - path: hyman2026local_fig1_budget.png
+          sha256: 1a2a17eb16be5ba73ca3f860a5572ae86025073b8f47dd75cb42a61ef684268d
+      owner: self
+      provenance_note: "Printed as Figure 2 since v1_3_0. Regenerated for v1_3_0 with larger fonts (W3-9); recolored for v1_3_1 (slot 4 yellow replaced by slot 7 violet: slots 2 and 4 failed the all-pairs normal-vision floor, dE 13.7 < 15; W5-16(f), SA-6). The on-disk PNG carries a platform-inserted caBX chunk; the generator output hash is e412137a74db1f41, pixels identical (M1.6 rule). Figure bytes are environment-dependent (W1-9): verify by the log, not by hash, off this container. A platform caBX chunk may be inserted into the PNG after deposit; compare pixels."
+      last_verified: 2026-10-12
+    - id: fig2
+      kind: figure
+      label: fig:dimension
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir ."
+      inputs: []
+      params:
+        seed: null
+        notes: "Section G; beta_inf against delta for r = 2, 4; overhead band from Section H (published speedup pairs typed from sources verified 2026-10-08). v1_4_0 adds the 17 AMReX finite-depth budgets (AMREX_POINTS, checked against validation/evaluation_s5.json) and a label quoting the x_C and y ranges (checked against validation/s6_tables_output.txt); rulings G6(a), G8(a); deviations D2, D3"
+      software:
+        - "python 3.13"
+        - "numpy 2.5.3"
+        - "matplotlib 3.11.2"
+      outputs:
+        - path: hyman2026local_fig2_dimension.pdf
+          sha256: c6d18a9f03e2cdb2f2d1e1fcfdd051aac51a1f0d48f67b2680d9b676ef4e9ba2
+        - path: hyman2026local_fig2_dimension.png
+          sha256: c4c21dea160eae25c4e2d6c8a1422546c90e45ba6bf9462bdadbff69f9cc8baa
+      owner: self
+      provenance_note: "New in v1_3_0 (W5-14); printed as Figure 1. Palette validated with the dataviz validator (2 slots, light mode, all checks pass). Redrawn at S6 (v1_4_0) with the 17 AMReX finite-depth budgets and the overhead label (G6(a), G8(a)). The on-disk PNG carries a platform-inserted caBX chunk; the generator output hash is d62cfc3109bdd389, as in hyman2026local_reproduce_output.txt, pixels identical (M1.6 rule; note corrected at S7, M7.4). Redrawn at S8 (v1_5_0, G15(a′)): legend and AMReX overhead ranges below the panels, larger AMReX markers, feature names on the tick labels, band annotated; palette unchanged and re-validated; generator PNG hash def4eb43270cd229. At S9 kickoff (branch 8) the registry hash was set to the on-disk file, which carries a platform caBX chunk of 5,758 bytes; with the chunk removed the bytes equal the generator output def4eb43270cd229, and the pixels are identical (M9.4)."
+      last_verified: 2026-10-12
+    - id: fig3
+      kind: figure
+      label: fig:validation
+      status: deposited
+      generator:
+        path: validation/fig3_validation.py
+        language: python
+        sha256: 690a2b38eedadea066c4815f03b93bdfdb955e73c859b1adffe3f3e37f2bc24e
+        entrypoint: "python3 validation/fig3_validation.py validation/data --frozen validation/predictions_frozen.csv --evaluation validation/evaluation_s5.json --outdir ."
+      inputs:
+        - path: validation/data/runs.csv
+          sha256: 3926d727df31988cf3d577193f553b43ffe34eb44efd8b5691def53ed2773d1e
+        - path: validation/data/levels.csv
+          sha256: 71f48c9ddc2ebe256dcda1cc9c9636770be1c84017a446d57ad4e71117a3fee0
+        - path: validation/predictions_frozen.csv
+          sha256: 11d2e03060d6de2b0d26e76da09690e468fdff53851eda638bf2905fa8cc9721
+        - path: validation/evaluation_s5.json
+          sha256: d255b29ecf9fadbc4153f1df7d0ffeed73e93d48610b6c02f2edf69d7894f0aa
+        - path: validation/fit.py
+          sha256: 6f1b2ef1e300ec58a2d8a612471a293a296f0db7541f1827dec994642db6dd3d
+      params:
+        seed: null
+        notes: "Deterministic. Panel (a): frozen held-out predictions (filled) and training leave-one-configuration-out predictions of the selected pair K1+O3 (open), recomputed with fit.py. Panel (b): held-out errors with 95% bootstrap intervals from evaluate.py (2,000 resamples, seed 20261008). The evaluation itself is validation/evaluate.py with --frozen-sha256 11d2e030..."
+      software:
+        - "python 3.13"
+        - "numpy 2.5.3"
+        - "scipy 1.18.1"
+        - "matplotlib 3.11.2"
+        - "scikit-image 0.26.0 (palette check only)"
+      outputs:
+        - path: hyman2026local_fig3_validation.pdf
+          sha256: f238003abf5d45a81cf49b5d856ad44ae9e8f5097d0f700446f67f9689e5a476
+        - path: hyman2026local_fig3_validation.png
+          sha256: 296479fd243f7f7ccdcf0ed2c44fd3e72f616393d897fe4ea9ca8ad27c434cd7
+      owner: self
+      provenance_note: "New in S5 (2026-10-08, branch 4); not yet in the manuscript (S6 adds it as Figure 3). Palette: categorical slots 1 and 2 of the existing figures, CIEDE2000 48.5 between them (M5.1; the dataviz skill was not installed this session). Regenerated twice byte-identically in this container. The on-disk PNG carries a platform-inserted caBX chunk; the generator output hash is a3d7d4ecad5abfbd, pixels identical (M1.6 rule; repaired at S6 close, Plan M6.3). In the manuscript from v1_4_0 (S6); palette passes the dataviz validator (2 slots, light mode, adjacent and all pairs)."
+      last_verified: 2026-10-08
+    - id: tab1
+      kind: table
+      label: tab:fixed
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir . --no-figure"
+      inputs: []
+      params:
+        seed: null
+        notes: "Section B (p = 1/20, r = 4); values typed into the .tex from the output log"
+      software:
+        - "python 3.13"
+      outputs:
+        - path: hyman2026local_reproduce_output.txt
+          sha256: 678bbb28e2c174db64a618dabe153b5020fb36067d3421f43921b63c72c01ea2
+      owner: self
+      provenance_note: "Numbers originate in the ChatGPT v1.1.0 Table 1; budget column added in v1_2_0"
+      last_verified: 2026-10-12
+    - id: tab2
+      kind: table
+      label: tab:limits
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir . --no-figure"
+      inputs: []
+      params:
+        seed: null
+        notes: "Section D; a = 1 and a = 1 - r^(delta-3)"
+      software:
+        - "python 3.13"
+      outputs:
+        - path: hyman2026local_reproduce_output.txt
+          sha256: 678bbb28e2c174db64a618dabe153b5020fb36067d3421f43921b63c72c01ea2
+      owner: self
+      provenance_note: "New in v1_2_0; unchanged values in v1_3_0"
+      last_verified: 2026-10-12
+    - id: tab3
+      kind: table
+      label: tab:codim
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir . --no-figure"
+      inputs: []
+      params:
+        seed: null
+        notes: "Section D (per-level gains for a point and curve budgets, uncovered cells, r = 2)"
+      software:
+        - "python 3.13"
+      outputs:
+        - path: hyman2026local_reproduce_output.txt
+          sha256: 678bbb28e2c174db64a618dabe153b5020fb36067d3421f43921b63c72c01ea2
+      owner: self
+      provenance_note: "New in v1_3_0 (W5-11): numbers moved from prose into a table"
+      last_verified: 2026-10-12
+    - id: tab4
+      kind: table
+      label: tab:counts
+      status: deposited
+      generator:
+        path: hyman2026local_reproduce.py
+        language: python
+        sha256: 78168efdd1a7fb4827eb15dad49cf2c45157f6a6443b9a3823be4f01a10ad8ff
+        entrypoint: "python3 hyman2026local_reproduce.py --outdir . --no-figure"
+      inputs: []
+      params:
+        seed: null
+        notes: "Section E; base 16^3, r = 2, band 2 cells, L = 5, center (0.5123, 0.4871, 0.5037), radius 0.3; circle tilted 0.37 rad about the x-axis; aligned circle to L = 11 and band/ratio sensitivity also logged"
+      software:
+        - "python 3.13"
+        - "numpy 2.5.3"
+      outputs:
+        - path: hyman2026local_reproduce_output.txt
+          sha256: 678bbb28e2c174db64a618dabe153b5020fb36067d3421f43921b63c72c01ea2
+      owner: self
+      provenance_note: "Table 3 in v1_2_0/v1_2_1, Table 4 in v1_3_0 to v1_3_2; circle tilted and beta_u column added (W5-3, W5-15); independently re-derived by verification/wu8_revision_checks.py"
+      last_verified: 2026-10-12
+
+    - id: tab5
+      kind: table
+      label: tab:amrex
+      status: deposited
+      generator:
+        path: validation/s6_tables.py
+        language: python
+        sha256: 429e73b5c922170d1fb05dd2800b46ee7c245c47c230e7ab500e1264ba8409f2
+        entrypoint: "python3 validation/s6_tables.py validation/data --evaluation validation/evaluation_s5.json --selection validation/predictions_frozen_selection.json --out validation/table5_rows.tex"
+      inputs:
+        - path: validation/data/runs.csv
+          sha256: 3926d727df31988cf3d577193f553b43ffe34eb44efd8b5691def53ed2773d1e
+        - path: validation/data/levels.csv
+          sha256: 71f48c9ddc2ebe256dcda1cc9c9636770be1c84017a446d57ad4e71117a3fee0
+        - path: validation/evaluation_s5.json
+          sha256: d255b29ecf9fadbc4153f1df7d0ffeed73e93d48610b6c02f2edf69d7894f0aa
+        - path: validation/predictions_frozen_selection.json
+          sha256: 8c2f74277c9e9feb29176e3dc37630b9f1bae24ed36c5c2537763448296ce32d
+        - path: validation/fit.py
+          sha256: 6f1b2ef1e300ec58a2d8a612471a293a296f0db7541f1827dec994642db6dd3d
+      params:
+        seed: null
+        notes: "Deterministic; standard library plus fit.py (NumPy, SciPy). Section A writes the Table 5 rows; B the non-kernel timer decomposition; C the level ratios against Table 4; D the post hoc checks of the S6 referees (counts-alone baseline, component errors, x_C, y, sensitivity, original-repetition verdict). Stdout is validation/s6_tables_output.txt. None of it enters the R1.2 verdict."
+      software:
+        - "python 3.13"
+        - "numpy 2.5.3"
+        - "scipy 1.18.1"
+      outputs:
+        - path: validation/table5_rows.tex
+          sha256: 1698ee8a7026862f21179ca560a1e22ae28dfccc88128eafdb637fa1cbd4beb4
+        - path: validation/s6_tables_output.txt
+          sha256: 7b725f6c98f7750e6a3804022ce70430882f8e65d030388929e7e6fa94518315
+      owner: self
+      provenance_note: "New in v1_4_0 (S6, branch 5). The rows in the .tex equal table5_rows.tex below its comment line. Columns per rulings G7(a) and G8(a); x_C from median times (second referee Q-8)."
+      last_verified: 2026-10-08
+    - id: tabA1
+      kind: table
+      label: tab:counterfactual
+      status: deposited
+      generator:
+        path: validation/s8_appendix_table.py
+        language: python
+        sha256: 84a75a6a5ab7d20854f383a41c19d445e70469b79c475bb71d6a5350594158a4
+        entrypoint: python3 validation/s8_appendix_table.py validation/data --evaluation validation/evaluation_s5.json --out validation/tableA1_rows.tex
+      inputs:
+      - path: validation/data/runs.csv
+        sha256: 3926d727df31988cf3d577193f553b43ffe34eb44efd8b5691def53ed2773d1e
+      - path: validation/data/levels.csv
+        sha256: 71f48c9ddc2ebe256dcda1cc9c9636770be1c84017a446d57ad4e71117a3fee0
+      - path: validation/evaluation_s5.json
+        sha256: d255b29ecf9fadbc4153f1df7d0ffeed73e93d48610b6c02f2edf69d7894f0aa
+      - path: validation/fit.py
+        sha256: 6f1b2ef1e300ec58a2d8a612471a293a296f0db7541f1827dec994642db6dd3d
+      - path: validation/s6_tables.py
+        sha256: 429e73b5c922170d1fb05dd2800b46ee7c245c47c230e7ab500e1264ba8409f2
+      params:
+        seed: null
+        notes: Deterministic; imports fit.py (NumPy, SciPy) and s6_tables.py. Post hoc counterfactual overheads x_C' (without the time-step difference) and x_C'' (also without the stability check), each the difference of the schedules' median timers over K_G. Stdout is validation/s8_appendix_table_output.txt. Nothing enters the R1.2 verdict.
+      software:
+      - python 3.13
+      - numpy 2.5.3
+      - scipy 1.18.1
+      outputs:
+      - path: validation/tableA1_rows.tex
+        sha256: 57c6875857232713eaf25306f34b37bf499109c2b87e0a4d67fb646494d44c67
+      - path: validation/s8_appendix_table_output.txt
+        sha256: 43778ac919d423b023ecb32f9cff2c701b67a8cc70086b95f7591d0394483c6e
+      owner: self
+      provenance_note: New in v1_5_0 (S8, branch 7; ruling G15(a′)). The rows in the .tex equal tableA1_rows.tex below its comment line. Importing s6_tables.py writes validation/__pycache__/s6_tables.cpython-313.pyc (run with PYTHONDONTWRITEBYTECODE=1 to avoid it).
+      last_verified: 2026-10-09
+metadata:
+  schema_version: 1.3
+  last_updated: 2026-10-12
+  last_updated_by: "claude-session-11 (branch 9 closing; Li and Hyman report recovered, G21 to G24 ruled, S12 added; cleanup 2026-10-12 executed)"
+  master_plan: hyman2026local_MasterPlan.md
+  session_counter: 11
+  handoff_file: HANDOFF_hyman2026local_Session11.md
+  next_task: "S12 kickoff (gate K) in branch 10: credit Li and Hyman (LA-UR-06-8741) under rulings G21 to G24 in a y-bump to v1_7_0, with a diff check, then rebuild the COR package, arXiv tarball and CGR archive. v1_6_1 is not to be posted"
+  registry_entry_written: false
+  notes: "Branch gate after S5 (2026-10-08, branch 4): Mac approved cleanup run 4 by name and sent \\GO at 19:47, accepting G1(a) keep Lemma 1 and report measured growth, G2(a) keep the one-run test as sufficient and report its conservatism, G3(a) report negative H in the validation section and one scoped abstract clause; 14 files removed (the two run2 archives and 12 recovered scratch files; count erratum M5.6). S5 (2026-10-08, branch 4): pair K1+O3 selected by training leave-one-out (median 0.124); seven held-out predictions frozen (SHA-256 11d2e030, recorded in the CHANGELOG before evaluation); R1.2 verdict PASS, median held-out error 0.071 (95% bootstrap CI 0.021 to 0.082), largest 0.080, no miss above 20%; all twelve pre-registered pairs would also pass (held-out medians 0.032 to 0.071); an independent recomputation agrees exactly. Measured H<0 in all 17 configurations; the one-run test has no false positive but holds in only 6 of 17. Figure 3 drawn (validation/fig3_validation.py), not yet in the manuscript. Exploratory set run after the freeze (deviation D1): frozen-pair errors 0.001 to 0.136. Branch-3 scratchpad files retained in recovered_scratchpad_branch3/ (M5.5). Branch gate after S4 (2026-10-08): ruling R3.1 adds COR v4.1 (S8) and CGR v4.1.1 (S9) after document editing is final (protocol texts in protocols/); cleanup run 3 approved by name and executed (6 files; the two A8 files kept in archive/branch1_superseded/). S4 (2026-10-08, branch 3) ran the primary matrix: 170 runs plus 20 plan-section-10 reruns; QC passes with one flagged held-out cell; held-out speedups withheld until the S5 freeze; training configurations show negative measured overhead H. S3 (2026-10-08, branch 3) built the AMReX validation harness: analysis plan v1 hashed e4c615e3 before any timed run and amendment v2 hashed cbc2f22c before any S4 timing; Advection_AmrCore patched (harness v2, 68f11783) and built in 2D and 3D; smoke and calibration runs are non-analysis data. The manuscript is unchanged at v1_3_2. v1_3_2 (2026-10-08, branch gate) adds to the AI-use statement the sentence Mac approved as ruling W0-6 (the referee panel's proposals); no other change. v1_3_1 (2026-10-08, branch gate) is a format-only z-bump for protocol compliance: FLTE ties before 71 citations and equation references, microtype, and a Figure 2 recolor (W5-16(f)); rendered word sequence unchanged apart from line breaks. v1_3_0 (2026-10-08) implements the MREP cycle findings on GATE B and C rulings: repositioning, limit corollary, latency both ways, one-run test, published-overhead bracket, Figure 2, tilted circle; see CHANGELOG. Earlier: v1_2_1 substrate re-hashed after a build-path-only edit (five citation keys standardized to Google Scholar form; rendered text verified identical by pdftotext diff). li2002local (Local time step versus locked time step, LANL 2002) could not be located online; by ruling R1.6 it is cited only through LA-UR-03-8927 and is uncited in v1_3_x. Project transferred from ChatGPT as 'amrstepping' v1.1.0 (archive/amrstepping_v1_1_0_chatgpt_package.zip, rollback anchor). Key renamed to hyman2026local per preference 7.6."
+  readme_extra_files:
+    hyman2026local_v1_6_1.pdf: v1_6_1 PDF (24 pp); .bbl alongside
+    hyman2026local_COR_2026-10-10.zip: COR v4.1 Overleaf-ready package (tex, bib, bbl, three figure PDFs, README, YAML, CHANGELOG, arXiv metadata); compiles in isolation
+    hyman2026local_v1_6_1_arXiv.tar.gz: arXiv source (tex, bbl, three figure PDFs); compiles in isolation without bibtex
+    hyman2026local_v1_6_1_arXiv_metadata.txt: title, author, categories, comments and the abstract with S_ideal expanded (1,670 characters) for the arXiv form
+    hyman2026local_Session10_Report.md: Session 10 report (COR v4.1) with gate log
+    hyman2026local_2026-10-10.zip: CGR v4.1.1 repository archive for machyman/hyman2026local (MIT); audit and fresh extract pass; not pushed
+    hyman2026local_Session11_Report.md: Session 11 report (CGR v4.1.1) with gate log
+    hyman2026local_RunReport_2026-10-10.md: run report with the excellence assessment
+    archive/v1_6_0/: the v1_6_0 version set (tex, pdf, bbl, generator, log, three figures)
+    archive/v1_5_0/: the v1_5_0 version set (tex, pdf, bbl, generator, log, three figures)
+    hyman2026local_GSR_S9A_2026-10-09.md: S9 cold GSR v3 score by scorer A on v1_6_0 (STS 79) with actions
+    hyman2026local_GSR_S9B_2026-10-09.md: S9 cold GSR v3 score by scorer B on v1_6_0 (STS 78) with actions
+    hyman2026local_DiffCheck_S9_2026-10-09.md: S9 independent check of v1_5_0 to v1_6_0 (1 HIGH and 2 MEDIUM fixed; follow-up round found none)
+    hyman2026local_Session9_Report.md: Session 9 report (second restructuring under G17(b), v1_6_0) with gate log
+    archive/v1_4_1/: the v1_4_1 version set (tex, pdf, bbl, generator, log, three figures)
+    hyman2026local_GSR_S8_2026-10-09.md: S8 cold GSR v3 readiness score on v1_5_0 (STS 78) with actions
+    hyman2026local_DiffCheck_S8_2026-10-09.md: S8 independent check of v1_4_1 to v1_5_0 (5 HIGH, 7 MEDIUM fixed; follow-up round with 2 MEDIUM fixed)
+    hyman2026local_Session8_Report.md: Session 8 report (restructuring under G15(a′), v1_5_0) with gate log
+    validation/s8_appendix_table.py: Table A1 rows, the post hoc counterfactual overheads (output in s8_appendix_table_output.txt, rows in tableA1_rows.tex)
+    archive/v1_4_0/: the v1_4_0 version set (tex, pdf, bbl, generator, log, three figures)
+    hyman2026local_GSR_S7_2026-10-09.md: S7 cold GSR v3 readiness score (STS 80) with actions toward 90
+    hyman2026local_DiffCheck_S7_2026-10-09.md: S7 independent check of the v1_4_0 to v1_4_1 edits (fixes applied; follow-up clean)
+    hyman2026local_Session7_Report.md: Session 7 report (author items, LOW items, readiness score) with gate log
+    archive/v1_3_2/: the v1_3_2 version set (tex, pdf, bbl, arXiv package, generator, log, both figures)
+    hyman2026local_VER_RolePass_S6_2026-10-08.md: S6 VER role pass on the 16 S2 bibliography entries (0 HIGH; three wording fixes; Athena++ addendum)
+    hyman2026local_Referee_S6_2026-10-08.md: S6 cold referee pass 1 (4 HIGH; led to rulings G7, G8)
+    hyman2026local_Referee2_S6_2026-10-08.md: S6 cold referee pass 2 (2 HIGH, fixed in the text)
+    hyman2026local_Referee3_S6_2026-10-08.md: S6 cold referee pass 3 (no HIGH; MEDIUM fixes applied)
+    validation/s6_tables.py: Table 5 rows, overhead decomposition, level ratios and the post hoc referee checks (output in s6_tables_output.txt, rows in table5_rows.tex)
+    hyman2026local_Session6_Report.md: Session 6 report (validation section, v1_4_0, referee passes) with gate log
+    hyman2026local_v1_3_2.bbl: compiled bibliography (shipped with the arXiv source)
+    hyman2026local_fig2_dimension.pdf: printed Figure 1, budget against feature dimension (PNG copy alongside)
+    archive/v1_2_1/: the v1_2_1 version set (tex, pdf, bbl, arXiv package, generator, log, Figure 1)
+    archive/v1_3_0/: the v1_3_0 version set (tex, pdf, bbl, arXiv package, generator, log, both figures)
+    hyman2026local_v1_3_0_arXiv.tar.gz: superseded v1_3_0 arXiv package (copy in archive/v1_3_0/)
+    RTP_StressTest_Review_hyman2026local_2026-10-08.md: WU7 RTP measures for the RTP development conversation
+    HANDOFF_hyman2026local_MREP_WU7.md: MREP WU7 handoff
+    HANDOFF_hyman2026local_MREP_WU8.md: MREP WU8 handoff (v1_3_0)
+    HANDOFF_hyman2026local_Session2.md: branch handoff and manifest (Session 2 closing; startup prompt for branch 3)
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-08_run2.md: cleanup proposal run 2; approved by Mac by name and executed 2026-10-08 (4 outputs files, the recovered folder and /home/claude/v_s2 removed)
+    hyman2026local_reproduce.py: generator for Tables 1-4, both figures and the overhead bracket (exact arithmetic; deterministic)
+    hyman2026local_reproduce_output.txt: log of the generator run that the tables quote
+    hyman2026local_fig1_budget.pdf: printed Figure 2, budget against depth (PNG copy alongside)
+    hyman2026local_v1_3_2_arXiv.tar.gz: arXiv source package (tex + bbl + two figures); builds cleanly; not posted
+    hyman2026local_v1_3_1_arXiv.tar.gz: superseded v1_3_1 arXiv package (copy in archive/v1_3_1/)
+    archive/v1_3_1/: the v1_3_1 version set (tex, pdf, bbl, arXiv package, generator, log, both figures)
+    hyman2026local_v1_2_1_arXiv.tar.gz: superseded v1_2_1 arXiv package (copy in archive/v1_2_1/)
+    hyman2026local_MasterPlan.md: Master Plan for session-autopilot (rev 20; S7 closed, v1_4_1; G9 to G14 ruled; G15, G16 and the G12 attestation pending; next S8 in branch 7)
+    hyman2026local_Session2_Report.md: Session 2 report (MREP cycle WU0-WU8, v1_3_0) with gate log
+    hyman2026local_Session3_Report.md: Session 3 report (AMReX validation harness) with gate log
+    hyman2026local_Session4_Report.md: Session 4 report (paired AMReX runs, QC, training-set observations) with gate log
+    validation/data/: S4 primary matrix and plan-section-10 reruns (runs.csv, levels.csv, logs, inputs, qc.json, qc_summary.md)
+    validation/qc_s4.py: S4 quality control; training-only speedups before the freeze
+    validation/fit.py: S5 fitting, selection and prediction freeze (reads no held-out timing)
+    validation/evaluate.py: S5 evaluation after the freeze hash is recorded
+    validation/analysis_plan.md: AMReX validation analysis plan v1, hashed before any timed run (SHA-256 e4c615e3b68fc1d4)
+    validation/analysis_plan_v2.md: pre-data amendment v2 (window length per configuration; 17-digit conservation sums; SHA-256 cbc2f22c647c52f0)
+    validation/BUILD.md: AMReX pins, build lines, patch and binary hashes, window map
+    validation/harness/Advection_AmrCore.patch: harness v2 patch to amrex-tutorials Advection_AmrCore (tagging, constant velocity, timers, window)
+    validation/run_matrix.py: writes inputs, runs the harness, parses its reports into runs.csv and levels.csv
+    validation/nc_map.json: timing-window length per configuration (amendment v2)
+    validation/smoke/: S3 smoke runs (non-analysis)
+    validation/calibration/: S3 calibration runs, subcycled only (non-analysis)
+    hyman2026local_MREP_Kit.zip: MREP kit (bundle v6.31-preview) and launch prompt for the S2 review cycle
+    HANDOFF_hyman2026local_MREP_WU0.md: MREP WU0 pre-flight report and MSHP handoff (GATE A rulings)
+    HANDOFF_hyman2026local_MREP_WU1.md: MREP WU1 verification handoff
+    HANDOFF_hyman2026local_MREP_WU2.md: MREP WU2 bibliography handoff (GATE B)
+    hyman2026local_MREP_Report_2026-10-08.md: MREP findings report, FROZEN at WU6 (SHA-256 831cf444d9ff7ba0)
+    hyman2026local_Verification_Register_2026-10-08.md: WU1 verification register (equations, statements, proofs, numbers)
+    hyman2026local_VER_Report_2026-10-08.md: WU2 bibliography, BKS and LRV report
+    hyman2026local_WU3_Structure_Report_2026-10-08.md: WU3 GSR, NTA, FTQ report and blind RTP-draft pass
+    hyman2026local_WU4_Prose_Report_2026-10-08.md: WU4 SPRE diagnostic report
+    hyman2026local_HR_Report_2026-10-08.md: WU5 cold HR v2.1.1 panel report
+    hyman2026local_PathToExceptional_2026-10-08.md: WU6 IMP synthesis, grade and path to exceptional
+    HANDOFF_hyman2026local_MREP_WU3.md: MREP WU3 handoff
+    HANDOFF_hyman2026local_MREP_WU4.md: MREP WU4 handoff
+    HANDOFF_hyman2026local_MREP_WU5.md: MREP WU5 handoff
+    HANDOFF_hyman2026local_MREP_WU6.md: MREP WU6 handoff (GATE C; frozen report hash)
+    hyman2026local_render_readme.py: renders this README from the YAML (--check diffs)
+    hyman2026local_ImprovementMemo_v1_2_0.md: excellence-first improvement memo
+    hyman2026local_Session1_Report.md: Session 1 report with gate log
+    HANDOFF_hyman2026local_Session1.md: branch handoff and manifest
+    verification/: independent referee check scripts, plus Claude's symbolic check and ASM helpers
+    archive/: ChatGPT v1.1.0 package (rollback anchor), v1_2_0 snapshot, pilot diagnosis
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-08.md: cleanup proposal; approved by Mac and executed 2026-10-08 (2 files deleted; copies in the BRANCH snapshot)
+    HANDOFF_hyman2026local_Session4.md: branch handoff and manifest (Session 4 closing; startup prompt for branch 4)
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-08_run3.md: cleanup proposal run 3; approved by Mac by name and executed 2026-10-08 (6 files)
+    BRANCH_Snapshot_hyman2026local_2026-10-09_run3.zip: pre-cleanup snapshot for 2026-10-09 run 3 (599 files)
+    BRANCH_Recovery_hyman2026local_2026-10-09_run3.zip: recovery archive for branch 9
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-09_run3.md: cleanup proposal 2026-10-09 run 3; approved by Mac by name and executed 2026-10-09 (3 files)
+    BRANCH_Snapshot_hyman2026local_2026-10-12.zip: pre-cleanup snapshot for 2026-10-12 (626 files)
+    BRANCH_Recovery_hyman2026local_2026-10-12.zip: recovery archive for branch 10
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-12.md: cleanup proposal 2026-10-12; approved by Mac by name and executed 2026-10-12 (3 files)
+    HANDOFF_hyman2026local_Session11.md: handoff for branch 10 (S12 first)
+    references/Li_Hyman_LA-UR-06-8741_local_vs_locked.pdf: Li and Hyman, Local Time Step versus Locked Time Step for Adaptive Mesh Refinement, LA-UR-06-8741 (the source behind rulings G21 to G24)
+    HANDOFF_hyman2026local_Session7.md: branch handoff and manifest (Session 7 closing; startup prompt for branch 7)
+    HANDOFF_hyman2026local_Session8.md: branch handoff and manifest (Session 8 closing; startup prompt for branch 8)
+    HANDOFF_hyman2026local_Session9.md: branch handoff and manifest (Session 9 closing; startup prompt for branch 9)
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-09_run2.md: cleanup proposal 2026-10-09 run 2; approved by Mac by name and executed 2026-10-09 (3 of 5 files executed; the two protected .pyc caches stay; the v1_4_1 PDF has copies in archive/v1_4_1/ and the run2 snapshot)
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-08_run5.md: cleanup proposal run 5; approved by Mac by name and executed 2026-10-08 (3 files; copies in the run5 snapshot)
+    HANDOFF_hyman2026local_Session6.md: branch handoff and manifest (Session 6 closing; startup prompt for branch 6)
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-08_run4.md: cleanup proposal run 4; approved by Mac by name and executed 2026-10-08 (14 files; count erratum appended)
+    HANDOFF_hyman2026local_Session5.md: branch handoff and manifest (Session 5 closing; startup prompt for branch 5)
+    protocols/: COR v4.1 and CGR v4.1.1 protocol texts (ruling R3.1; Plan S8 and S9)
+    archive/branch1_superseded/: early Session1_Report.md and HANDOFF_2.md, kept from the released branch-1 snapshot (M4.1)
+    SHA256SUMS: checksums of every file except itself, the handoff, the changelog and the BRANCH archives
+    hyman2026local_fig3_validation.pdf: Figure 3 (S5), measured against predicted speedup and held-out errors; PNG copy alongside; enters the manuscript at S6
+    validation/predictions_frozen.csv: S5 prediction freeze, seven held-out configurations (SHA-256 11d2e03060d6de2b, recorded before evaluation)
+    validation/predictions_frozen_selection.json: S5 training leave-one-out scores for the twelve pairs and the selected pair's coefficients
+    validation/evaluation_s5.json: S5 evaluation (R1.2 verdict inputs, bootstrap, all twelve pairs, secondary analyses); .md summary alongside
+    validation/fig3_validation.py: Figure 3 generator (log in fig3_validation_output.txt)
+    validation/s5_independent_check.py: independent recomputation of the S5 freeze, fit, selection and errors (output alongside)
+    validation/deviations.md: deviation log (D1 exploratory windows; D2 Figure 1 presentation; D3 overhead measure)
+    validation/exploratory/: exploratory set after the freeze (calibration, paired data, window map, summary); never part of the verdict
+    validation/exploratory_s5.py: exploratory summary with the frozen pair's predictions
+    hyman2026local_Session5_Report.md: Session 5 report (fit, freeze, evaluation, Figure 3, exploratory set) with gate log
+    recovered_scratchpad_branch3/: 6 branch-3 scratchpad files kept by cleanup run 4 (patch edit scripts, branch tools, S4 console log) plus a README
+    recovered_scratchpad_branch8/: the S9 text both GSR scorers read, the S9 diff check's input and the G17(b) ruling text, copied from the scratchpad at S10 (M10.3), with a README
+cgr:                                # CGR v4.1.1 report (S11, 2026-10-10)
+  build_status: completed
+  archive_name: hyman2026local_2026-10-10.zip
+  archive_size_bytes: 1678530
+  archive_sha256: 3ccc86be7d7b31f26cf087dc761819df683fb3d24c9c8bfb1aad5a8d92b88bd3
+  build_decision: warned
+  build_decision_rationale: "block-on-critical; 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW (Check 7 notes); fresh extract PASS"
+  cgr_validation:
+    audit:
+      executed: true
+      strictness: block-on-critical
+      findings:
+        - id: CGR-AUDIT-07-validation/data
+          check: "7"
+          severity: LOW
+          location: validation/data
+          finding: "370 KB of raw timings: the threshold table suggests a supplement; on this arXiv-only route the repository is the supplement, and the README documents it"
+        - id: CGR-AUDIT-07-validation/exploratory
+          check: "7"
+          severity: LOW
+          location: validation/exploratory
+          finding: "152 KB, as above"
+      summary: {critical: 0, high: 0, medium: 0, low: 2}
+      build_decision: warned
+    fresh_extract:
+      executed: true
+      result: PASS
+      file_count_match: true
+      size_match: true
+      primary_artifact_identified: "hyman2026local_v1_6_1.tex, hyman2026local_reproduce.py, validation generators"
+      primary_artifact_type: mixed
+      execute_command: "chained in one shell under env -i: pdflatex x2; reproduce script; s6_tables.py; s8_appendix_table.py; fig3_validation.py; README renderer --check"
+      compile_passes_completed: 2
+      execute_exit_code: 0
+      working_tree_leak_detected: false
+      errors: []
+      timeout_seconds: 300
+      execution_duration_seconds: 10
+      notes: "24 pp, 0 errors, 0 file-not-found, 0 undefined; every log and rows file equal to its reference; figure PDFs byte-identical"
+  manuscript_github:
+    source_layer_gate: PASS
+    findings: "0 CRITICAL, 0 HIGH; on the bare archive 2 MEDIUM (P4: README names out/table5_rows.tex and out/tableA1_rows.tex, which the reader's own run creates; 0 after a run), 1 LOW (no .gitattributes; every file enters release archives, as intended)"
+    not_verified: "Pages build, the rendered site, external URL liveness; the repository does not exist yet"

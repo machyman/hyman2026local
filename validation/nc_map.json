@@ -1,0 +1,19 @@
+{
+ "d2_circle_L2_r2": 196,
+ "d2_circle_L3_r2": 60,
+ "d2_circle_L4_r2": 13,
+ "d2_disk_L2_r2": 123,
+ "d2_disk_L3_r2": 15,
+ "d2_disk_L4_r2": 4,
+ "d2_point_L2_r2": 2505,
+ "d2_point_L3_r2": 1745,
+ "d2_point_L4_r2": 709,
+ "d3_ball_L2_r2": 6,
+ "d3_ball_L3_r2": 3,
+ "d3_circle_L2_r2": 24,
+ "d3_circle_L3_r2": 6,
+ "d3_point_L2_r2": 308,
+ "d3_point_L3_r2": 117,
+ "d3_sphere_L2_r2": 6,
+ "d3_sphere_L3_r2": 3
+}

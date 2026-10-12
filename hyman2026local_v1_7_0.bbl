@@ -1,0 +1,299 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Zhang et~al.(2019)Zhang, Almgren, Beckner, Bell, Blaschke, Chan, Day,
+  Friesen, Gott, Graves, Katz, Myers, Nguyen, Nonaka, Rosso, Williams, and
+  Zingale]{zhang2019amrex}
+Weiqun Zhang, Ann Almgren, Vince Beckner, John Bell, Johannes Blaschke,
+  Cy~Chan, Marcus Day, Brian Friesen, Kevin Gott, Daniel Graves, Max Katz,
+  Andrew Myers, Tan Nguyen, Andrew Nonaka, Michele Rosso, Samuel Williams, and
+  Michael Zingale.
+\newblock {AMReX}: a framework for block-structured adaptive mesh refinement.
+\newblock \emph{Journal of Open Source Software}, 4\penalty0 (37):\penalty0
+  1370, 2019.
+\newblock \doi{10.21105/joss.01370}.
+
+\bibitem[{AMReX Developers}(2026{\natexlab{a}})]{amrex2026runtime}
+{AMReX Developers}.
+\newblock {AMReX} documentation: Runtime parameters, {Amr} class, subcycling.
+\newblock
+  \url{https://amrex-codes.github.io/amrex/docs_html/RuntimeParameters.html},
+  2026{\natexlab{a}}.
+\newblock Accessed October 8, 2026.
+
+\bibitem[{Castro Developers}(2026)]{castro2026timestepping}
+{Castro Developers}.
+\newblock Castro documentation: Timestepping and retries, subcycling.
+\newblock \url{https://amrex-astro.github.io/Castro/docs/timestepping.html},
+  2026.
+\newblock Accessed October 8, 2026.
+
+\bibitem[Almgren et~al.(2013)Almgren, Bell, Lijewski, Luki{\'c}, and
+  Van~Andel]{almgren2013nyx}
+Ann~S. Almgren, John~B. Bell, Mike~J. Lijewski, Zarija Luki{\'c}, and Ethan
+  Van~Andel.
+\newblock Nyx: A massively parallel {AMR} code for computational cosmology.
+\newblock \emph{The Astrophysical Journal}, 765\penalty0 (1):\penalty0 39,
+  2013.
+\newblock \doi{10.1088/0004-637X/765/1/39}.
+
+\bibitem[{AMReX Developers}(2026{\natexlab{b}})]{amrex2026source}
+{AMReX Developers}.
+\newblock {AMReX} source code: {Src/Amr/AMReX\_Amr.cpp}, subcycling mode
+  {Optimal} and {Amr::computeOptimalSubcycling}.
+\newblock
+  \url{https://github.com/AMReX-Codes/amrex/blob/development/Src/Amr/AMReX_Amr.cpp},
+  2026{\natexlab{b}}.
+\newblock Development branch, commit 6bff801, accessed October 8, 2026.
+
+\bibitem[Dubey et~al.(2014)Dubey, Almgren, Bell, Berzins, Brandt, Bryan,
+  Colella, Graves, Lijewski, L{\"o}ffler, O'Shea, Schnetter, Van~Straalen, and
+  Weide]{dubey2014survey}
+Anshu Dubey, Ann Almgren, John Bell, Martin Berzins, Steve Brandt, Greg Bryan,
+  Phillip Colella, Daniel Graves, Michael Lijewski, Frank L{\"o}ffler, Brian
+  O'Shea, Erik Schnetter, Brian Van~Straalen, and Klaus Weide.
+\newblock A survey of high level frameworks in block-structured adaptive mesh
+  refinement packages.
+\newblock \emph{Journal of Parallel and Distributed Computing}, 74\penalty0
+  (12):\penalty0 3217--3227, 2014.
+\newblock \doi{10.1016/j.jpdc.2014.07.001}.
+
+\bibitem[Stone et~al.(2020)Stone, Tomida, White, and Felker]{stone2020athena}
+James~M. Stone, Kengo Tomida, Christopher~J. White, and Kyle~G. Felker.
+\newblock The {Athena++} adaptive mesh refinement framework: design and
+  magnetohydrodynamic solvers.
+\newblock \emph{The Astrophysical Journal Supplement Series}, 249\penalty0
+  (1):\penalty0 4, 2020.
+\newblock \doi{10.3847/1538-4365/ab929b}.
+
+\bibitem[Esclapez et~al.(2023)Esclapez, Day, Bell, Felden, Gilet, Grout,
+  Henry~de Frahan, Motheau, Nonaka, Owen, Perry, Rood, Wimer, and
+  Zhang]{esclapez2023pelelmex}
+Lucas Esclapez, Marc Day, John Bell, Anne Felden, Candace Gilet, Ray Grout,
+  Marc Henry~de Frahan, Emmanuel Motheau, Andrew Nonaka, Landon Owen, Bruce
+  Perry, Jon Rood, Nicolas Wimer, and Weiqun Zhang.
+\newblock {PeleLMeX}: an {AMR} low {Mach} number reactive flow simulation code
+  without level sub-cycling.
+\newblock \emph{Journal of Open Source Software}, 8\penalty0 (90):\penalty0
+  5450, 2023.
+\newblock \doi{10.21105/joss.05450}.
+
+\bibitem[Berger and Oliger(1984)]{berger1984adaptive}
+Marsha~J. Berger and Joseph Oliger.
+\newblock Adaptive mesh refinement for hyperbolic partial differential
+  equations.
+\newblock \emph{Journal of Computational Physics}, 53\penalty0 (3):\penalty0
+  484--512, 1984.
+\newblock \doi{10.1016/0021-9991(84)90073-1}.
+
+\bibitem[Berger and Colella(1989)]{berger1989local}
+Marsha~J. Berger and Phillip Colella.
+\newblock Local adaptive mesh refinement for shock hydrodynamics.
+\newblock \emph{Journal of Computational Physics}, 82\penalty0 (1):\penalty0
+  64--84, 1989.
+\newblock \doi{10.1016/0021-9991(89)90035-1}.
+
+\bibitem[Osher and Sanders(1983)]{osher1983numerical}
+Stanley Osher and Richard Sanders.
+\newblock Numerical approximations to nonlinear conservation laws with locally
+  varying time and space grids.
+\newblock \emph{Mathematics of Computation}, 41\penalty0 (164):\penalty0
+  321--336, 1983.
+\newblock \doi{10.1090/S0025-5718-1983-0717689-8}.
+
+\bibitem[Dumbser(2014)]{dumbser2014arbitrary}
+Michael Dumbser.
+\newblock Arbitrary-{L}agrangian--{E}ulerian {ADER}--{WENO} finite volume
+  schemes with time-accurate local time stepping for hyperbolic conservation
+  laws.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  280:\penalty0 57--83, 2014.
+\newblock \doi{10.1016/j.cma.2014.07.019}.
+
+\bibitem[Savcenco et~al.(2007)Savcenco, Hundsdorfer, and
+  Verwer]{savcenco2007multirate}
+Valeriu Savcenco, Willem Hundsdorfer, and Jan~G. Verwer.
+\newblock A multirate time stepping strategy for stiff ordinary differential
+  equations.
+\newblock \emph{BIT Numerical Mathematics}, 47\penalty0 (1):\penalty0 137--155,
+  2007.
+\newblock \doi{10.1007/s10543-006-0095-7}.
+
+\bibitem[Li and Hyman(2003)]{li2003adaptive}
+Shengtai Li and J.~Mac Hyman.
+\newblock Adaptive mesh refinement for finite difference {WENO} schemes.
+\newblock Technical Report LA-UR-03-8927, Los Alamos National Laboratory, Los
+  Alamos, NM, 2003.
+
+\bibitem[Li and Hyman(2006)]{li2006local}
+Shengtai Li and James~M. Hyman.
+\newblock Local time step versus locked time step for adaptive mesh refinement.
+\newblock Technical Report LA-UR-06-8741, Los Alamos National Laboratory, Los
+  Alamos, NM, 2006.
+\newblock An earlier version circulated in 2002.
+
+\bibitem[Dursi and Zingale(2005)]{dursi2005efficiency}
+L.~J. Dursi and M.~Zingale.
+\newblock Efficiency gains from time refinement on {AMR} meshes and explicit
+  timestepping.
+\newblock In Tomasz Plewa, Timur Linde, and V.~Gregory Weirs, editors,
+  \emph{Adaptive Mesh Refinement -- Theory and Applications}, volume~41 of
+  \emph{Lecture Notes in Computational Science and Engineering}, pages
+  103--113. Springer, Berlin, Heidelberg, 2005.
+\newblock \doi{10.1007/3-540-27039-6_7}.
+\newblock Preprint arXiv:astro-ph/0310891.
+
+\bibitem[Domingues et~al.(2008)Domingues, Gomes, Roussel, and
+  Schneider]{domingues2008adaptive}
+Margarete~O. Domingues, S{\^o}nia~M. Gomes, Olivier Roussel, and Kai Schneider.
+\newblock An adaptive multiresolution scheme with local time stepping for
+  evolutionary {PDEs}.
+\newblock \emph{Journal of Computational Physics}, 227:\penalty0 3758--3780,
+  2008.
+\newblock \doi{10.1016/j.jcp.2007.11.046}.
+
+\bibitem[Seny et~al.(2014)Seny, Lambrechts, Toulorge, Legat, and
+  Remacle]{seny2014efficient}
+B.~Seny, Jonathan Lambrechts, Thomas Toulorge, Vincent Legat, and
+  Jean-Fran{\c{c}}ois Remacle.
+\newblock An efficient parallel implementation of explicit multirate
+  {Runge--Kutta} schemes for discontinuous {Galerkin} computations.
+\newblock \emph{Journal of Computational Physics}, 256\penalty0 (1):\penalty0
+  135--160, 2014.
+\newblock \doi{10.1016/j.jcp.2013.07.041}.
+
+\bibitem[Fernando and Sundar(2022)]{fernando2022scalable}
+Milinda Fernando and Hari Sundar.
+\newblock Scalable local timestepping on octree grids.
+\newblock \emph{SIAM Journal on Scientific Computing}, 44\penalty0
+  (2):\penalty0 C156--C183, 2022.
+\newblock \doi{10.1137/20M136013X}.
+
+\bibitem[Kritsuk et~al.(2006)Kritsuk, Norman, and Padoan]{kritsuk2006adaptive}
+Alexei~G. Kritsuk, Michael~L. Norman, and Paolo Padoan.
+\newblock Adaptive mesh refinement for supersonic molecular cloud turbulence.
+\newblock \emph{The Astrophysical Journal}, 638\penalty0 (1):\penalty0
+  L25--L28, 2006.
+\newblock \doi{10.1086/500688}.
+
+\bibitem[Faloutsos and Gaede(1996)]{faloutsos1996analysis}
+Christos Faloutsos and Volker Gaede.
+\newblock Analysis of n-dimensional quadtrees using the {Hausdorff} fractal
+  dimension.
+\newblock In T.~M. Vijayaraman, Alejandro~P. Buchmann, C.~Mohan, and Nandlal~L.
+  Sarda, editors, \emph{Proceedings of the 22nd International Conference on
+  Very Large Data Bases ({VLDB} '96)}, pages 40--50, Mumbai (Bombay), India,
+  1996. Morgan Kaufmann.
+\newblock ISBN 1-55860-382-4.
+\newblock URL \url{https://www.vldb.org/conf/1996/P040.PDF}.
+\newblock Accessed October 8, 2026.
+
+\bibitem[Falconer(2014)]{falconer2014fractal}
+Kenneth Falconer.
+\newblock \emph{Fractal Geometry: Mathematical Foundations and Applications}.
+\newblock John Wiley \& Sons, Chichester, third edition, 2014.
+\newblock ISBN 978-1-119-94239-9.
+
+\bibitem[Zhuang et~al.(2018)Zhuang, Tan, Huang, Liu, and
+  Zhang]{zhuang2018fractal}
+Yi~Zhuang, Huijun Tan, Hexia Huang, Yazhou Liu, and Yue Zhang.
+\newblock Fractal characteristics of turbulent--non-turbulent interface in
+  supersonic turbulent boundary layers.
+\newblock \emph{Journal of Fluid Mechanics}, 843:\penalty0 R2, 2018.
+\newblock \doi{10.1017/jfm.2018.220}.
+
+\bibitem[Schnetter et~al.(2004)Schnetter, Hawley, and
+  Hawke]{schnetter2004evolutions}
+Erik Schnetter, Scott~H. Hawley, and Ian Hawke.
+\newblock Evolutions in {3D} numerical relativity using fixed mesh refinement.
+\newblock \emph{Classical and Quantum Gravity}, 21\penalty0 (6):\penalty0
+  1465--1488, 2004.
+\newblock \doi{10.1088/0264-9381/21/6/014}.
+
+\bibitem[Breuer and Heinecke(2022)]{breuer2022next}
+Alexander Breuer and Alexander Heinecke.
+\newblock Next-generation local time stepping for the {ADER-DG} finite element
+  method.
+\newblock In \emph{2022 IEEE International Parallel and Distributed Processing
+  Symposium (IPDPS)}, pages 402--413. IEEE, 2022.
+\newblock \doi{10.1109/IPDPS53621.2022.00046}.
+
+\bibitem[Commer{\c{c}}on et~al.(2014)Commer{\c{c}}on, Debout, and
+  Teyssier]{commercon2014fast}
+Benoit Commer{\c{c}}on, Vincent Debout, and Romain Teyssier.
+\newblock A fast, robust, and simple implicit method for adaptive time-stepping
+  on adaptive mesh-refinement grids.
+\newblock \emph{Astronomy \& Astrophysics}, 563:\penalty0 A11, 2014.
+\newblock \doi{10.1051/0004-6361/201322858}.
+
+\bibitem[Schive et~al.(2018)Schive, ZuHone, Goldbaum, Turk, Gaspari, and
+  Cheng]{schive2018gamer}
+Hsi-Yu Schive, John~A. ZuHone, Nathan~J. Goldbaum, Matthew~J. Turk, Massimo
+  Gaspari, and Chin-Yu Cheng.
+\newblock {GAMER-2}: a {GPU}-accelerated adaptive mesh refinement code --
+  accuracy, performance, and scalability.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  481\penalty0 (4):\penalty0 4815--4840, 2018.
+\newblock \doi{10.1093/mnras/sty2586}.
+
+\bibitem[Liu et~al.(2024)Liu, He, Cheng, and Zeng]{liu2024investigate}
+Dewen Liu, Shuai He, Haoran Cheng, and Yadong Zeng.
+\newblock Investigate the efficiency of incompressible flow simulations on
+  {CPUs} and {GPUs} with {BSAMR}.
+\newblock arXiv preprint arXiv:2405.07148, 2024.
+
+\bibitem[McCorquodale and Colella(2011)]{mccorquodale2011high}
+Peter McCorquodale and Phillip Colella.
+\newblock A high-order finite-volume method for conservation laws on locally
+  refined grids.
+\newblock \emph{Communications in Applied Mathematics and Computational
+  Science}, 6\penalty0 (1):\penalty0 1--25, 2011.
+\newblock \doi{10.2140/camcos.2011.6.1}.
+
+\bibitem[Almgren et~al.(1998)Almgren, Bell, Colella, Howell, and
+  Welcome]{almgren1998conservative}
+Ann~S. Almgren, John~B. Bell, Phillip Colella, Louis~H. Howell, and Michael~L.
+  Welcome.
+\newblock A conservative adaptive projection method for the variable density
+  incompressible {Navier--Stokes} equations.
+\newblock \emph{Journal of Computational Physics}, 142\penalty0 (1):\penalty0
+  1--46, 1998.
+\newblock \doi{10.1006/jcph.1998.5890}.
+
+\bibitem[Martin et~al.(2008)Martin, Colella, and Graves]{martin2008cell}
+Daniel~F. Martin, Phillip Colella, and Daniel Graves.
+\newblock A cell-centered adaptive projection method for the incompressible
+  {Navier--Stokes} equations in three dimensions.
+\newblock \emph{Journal of Computational Physics}, 227\penalty0 (3):\penalty0
+  1863--1886, 2008.
+\newblock \doi{10.1016/j.jcp.2007.09.032}.
+
+\bibitem[Day and Bell(2000)]{day2000numerical}
+Marcus~S. Day and John~B. Bell.
+\newblock Numerical simulation of laminar reacting flows with complex
+  chemistry.
+\newblock \emph{Combustion Theory and Modelling}, 4\penalty0 (4):\penalty0
+  535--556, 2000.
+\newblock \doi{10.1088/1364-7830/4/4/309}.
+
+\bibitem[{SeisSol}(2026)]{seissol2026local}
+{SeisSol}.
+\newblock Local time-stepping ({LTS}).
+\newblock SeisSol documentation (latest), 2026.
+\newblock URL
+  \url{https://seissol.readthedocs.io/en/latest/local-timestepping.html}.
+\newblock Accessed October 8, 2026.
+
+\bibitem[LeVeque(2002)]{leveque2002finite}
+Randall~J. LeVeque.
+\newblock \emph{Finite Volume Methods for Hyperbolic Problems}.
+\newblock Number~31 in Cambridge Texts in Applied Mathematics. Cambridge
+  University Press, Cambridge, 2002.
+\newblock ISBN 978-0-521-81087-6.
+\newblock \doi{10.1017/CBO9780511791253}.
+
+\end{thebibliography}

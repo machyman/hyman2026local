@@ -1,0 +1,71 @@
+A  Table 5: 17 rows written to validation/table5_rows.tex
+   held-out frozen errors: median 0.0706; training LOO errors: median 0.1237, max 0.390 (d2_point_L2_r2)
+   x range -0.450 to -0.060; margin beta - x 0.229 to 1.342; one-run test holds in 6 of 17; subcycling wins in 17; false positives 0; cost-weighted variant agrees in 17
+   S/S_id: 0.508 to 1.159; S > S_id in 5 of 17
+B  non-kernel time by timer, medians over repetitions (seconds); share of O_G - O_L
+   config               O_G     O_L      fill     sync      avg      cfl       dt     diag  untimed
+   d2_circle_L2_r2      1.117   0.842      0.36     0.14     0.26    -0.32     0.49     0.00     0.05
+   d2_circle_L3_r2      1.650   1.049      0.38     0.06     0.24    -0.19     0.46     0.00     0.04
+   d2_circle_L4_r2      1.806   1.205      0.38     0.03     0.25    -0.20     0.50     0.00     0.03
+   d2_disk_L2_r2        1.012   0.676      0.08     0.29     0.35    -0.54     0.78     0.00     0.03
+   d2_disk_L3_r2        1.448   0.798      0.26     0.21     0.25    -0.31     0.52     0.00     0.07
+   d2_disk_L4_r2        2.887   1.792      0.12     0.20     0.34    -0.37     0.68     0.00     0.03
+   d2_point_L2_r2       1.579   1.146      0.44    -0.46     0.15    -0.31     1.06     0.00     0.13
+   d2_point_L3_r2       2.690   1.169      0.37    -0.00     0.09    -0.08     0.52     0.00     0.09
+   d2_point_L4_r2       2.655   0.827      0.37     0.09     0.09    -0.03     0.39     0.00     0.08
+   d3_ball_L2_r2        0.851   0.679      0.29     0.12     0.20    -0.74     1.07     0.00     0.08
+   d3_ball_L3_r2        3.283   2.382      0.09     0.18     0.21    -0.71     1.25     0.00     0.01
+   d3_circle_L2_r2      0.914   0.732      0.32    -0.00     0.18    -0.60     1.08     0.00     0.01
+   d3_circle_L3_r2      1.184   0.815      0.45    -0.01     0.13    -0.31     0.72     0.00     0.01
+   d3_point_L2_r2       0.977   0.744      0.60    -0.45     0.07    -0.37     1.10     0.00     0.06
+   d3_point_L3_r2       1.541   0.727      0.46     0.09     0.05    -0.10     0.47     0.00     0.03
+   d3_sphere_L2_r2      0.677   0.537      0.18     0.24     0.21    -0.73     1.11     0.00     0.01
+   d3_sphere_L3_r2      2.884   2.234      0.20     0.01     0.19    -0.64     1.18     0.00     0.01
+   pooled shares: fill 0.31, sync 0.06, avg 0.18, cfl -0.29, dt 0.68, diag 0.00, untimed 0.05
+   fill + avg share of O_G - O_L per configuration: 0.29 to 0.67
+   sync_L - sync_G (s): -0.214 to 0.198; positive in 5 of 17
+   O_L/K_L 0.29 to 1.74; O_G/K_G 0.25 to 1.35
+D  baseline: S_id from the counts alone, no fitted coefficient
+   held-out median e: counts 0.0733, selected model 0.0706; on S-1: counts 0.214, model 0.219
+   counts-alone e on points: 0.203 to 0.968
+   counts-alone e on filled regions: 0.026 to 0.137
+   held-out components of the frozen prediction (model minus measured):
+   d2_circle_L2_r2    H measured -0.275 s, predicted -0.138 s; x -0.286 vs -0.126; T_G -0.208, T_L -0.261
+   d2_circle_L3_r2    H measured -0.601 s, predicted -0.225 s; x -0.425 vs -0.161; T_G -0.312, T_L -0.303
+   d2_circle_L4_r2    H measured -0.601 s, predicted -0.213 s; x -0.450 vs -0.175; T_G -0.415, T_L -0.454
+   d3_circle_L2_r2    H measured -0.181 s, predicted +0.034 s; x -0.092 vs +0.018; T_G -0.140, T_L -0.139
+   d3_circle_L3_r2    H measured -0.369 s, predicted +0.018 s; x -0.161 vs +0.008; T_G -0.194, T_L -0.129
+   d3_sphere_L2_r2    H measured -0.140 s, predicted +0.072 s; x -0.088 vs +0.048; T_G -0.122, T_L -0.045
+   d3_sphere_L3_r2    H measured -0.650 s, predicted +0.151 s; x -0.098 vs +0.024; T_G -0.132, T_L -0.079
+   published-style 1/S - 1/S_id: -0.114 to +0.191; positive in 12 of 17; above 0.046 in 8
+   Section 2 overhead with one cost per update C = K_G/U_G (median T): x_C -0.422 to -0.003; negative in 17 of 17; margin beta - x_C 0.209 to 1.325
+   sensitivity (second referee Q-5): time-step computation is 0.073 to 0.132 of T_G; without the dt difference x_C > 0 in 6 of 17; without dt and cfl differences in 3 of 17
+   measured S for curves, surfaces and filled regions: 1.182 to 1.594; points: d2_point_L2_r2 2.172, d2_point_L3_r2 3.678, d2_point_L4_r2 5.232, d3_point_L2_r2 2.092, d3_point_L3_r2 2.669
+   kernel cost per update, subcycled over global: 1.001 to 1.250
+   realized saving 1 - 1/S: 0.154 to 0.809
+   2D coefficients: kernel [2.4280467817258667e-08], overhead zero entries 3 of 6
+   3D coefficients: kernel [8.026385689402102e-08], overhead zero entries 2 of 6
+   rerun cell d2_circle_L2_r2 subcycle: S with original repetitions 1.318, with the rerun 1.367
+   rerun cell d2_circle_L3_r2 global: S with original repetitions 1.438, with the rerun 1.594
+   rerun cell d2_circle_L3_r2 subcycle: S with original repetitions 1.438, with the rerun 1.594
+   rerun cell d2_disk_L2_r2 global: S with original repetitions 1.306, with the rerun 1.291
+   held-out median e with the original repetitions: 0.0750; max 0.110
+   runs.csv rows with status ok: 190
+C  level ratios M_{l+1}/M_l: AMReX (initial hierarchy) against Table 4 (synthetic, 3D)
+   d2_circle_L2_r2    M=[16384, 15744, 25280] ratios(l>=1)=[1.61] mean=1.61 r^delta=2 level-1 covers 0.240 of the domain
+   d2_circle_L3_r2    M=[16384, 19648, 34752, 49216] ratios(l>=1)=[1.77, 1.42] mean=1.58 r^delta=2 level-1 covers 0.300 of the domain
+   d2_circle_L4_r2    M=[16384, 20992, 38336, 66624, 98880] ratios(l>=1)=[1.83, 1.74, 1.48] mean=1.68 r^delta=2 level-1 covers 0.320 of the domain
+   d2_disk_L2_r2      M=[16384, 29568, 104960] ratios(l>=1)=[3.55] mean=3.55 r^delta=4 level-1 covers 0.451 of the domain
+   d2_disk_L3_r2      M=[16384, 30976, 107584, 399424] ratios(l>=1)=[3.47, 3.71] mean=3.59 r^delta=4 level-1 covers 0.473 of the domain
+   d2_disk_L4_r2      M=[16384, 30976, 107584, 399424, 1557504] ratios(l>=1)=[3.47, 3.71, 3.9] mean=3.69 r^delta=4 level-1 covers 0.473 of the domain
+   d2_point_L2_r2     M=[16384, 576, 256] ratios(l>=1)=[0.44] mean=0.44 r^delta=1 level-1 covers 0.009 of the domain
+   d2_point_L3_r2     M=[16384, 576, 384, 384] ratios(l>=1)=[0.67, 1.0] mean=0.82 r^delta=1 level-1 covers 0.009 of the domain
+   d2_point_L4_r2     M=[16384, 576, 576, 576, 256] ratios(l>=1)=[1.0, 1.0, 0.44] mean=0.76 r^delta=1 level-1 covers 0.009 of the domain
+   d3_ball_L2_r2      M=[32768, 253952, 713728] ratios(l>=1)=[2.81] mean=2.81 r^delta=8 level-1 covers 0.969 of the domain | synthetic ratios to the same depth [4.96]
+   d3_ball_L3_r2      M=[32768, 262144, 884736, 3904512] ratios(l>=1)=[3.38, 4.41] mean=3.86 r^delta=8 level-1 covers 1.000 of the domain | synthetic ratios to the same depth [4.96, 6.1]
+   d3_circle_L2_r2    M=[32768, 100352, 112640] ratios(l>=1)=[1.12] mean=1.12 r^delta=2 level-1 covers 0.383 of the domain | synthetic ratios to the same depth [2.03]
+   d3_circle_L3_r2    M=[32768, 119808, 192000, 209408] ratios(l>=1)=[1.6, 1.09] mean=1.32 r^delta=2 level-1 covers 0.457 of the domain | synthetic ratios to the same depth [2.03, 2.0]
+   d3_point_L2_r2     M=[32768, 4096, 4096] ratios(l>=1)=[1.0] mean=1.00 r^delta=1 level-1 covers 0.016 of the domain | synthetic ratios to the same depth [0.94]
+   d3_point_L3_r2     M=[32768, 9216, 9216, 7168] ratios(l>=1)=[1.0, 0.78] mean=0.88 r^delta=1 level-1 covers 0.035 of the domain | synthetic ratios to the same depth [0.94, 1.12]
+   d3_sphere_L2_r2    M=[32768, 204800, 549888] ratios(l>=1)=[2.69] mean=2.69 r^delta=4 level-1 covers 0.781 of the domain | synthetic ratios to the same depth [3.84]
+   d3_sphere_L3_r2    M=[32768, 262144, 837120, 2150400] ratios(l>=1)=[3.19, 2.57] mean=2.86 r^delta=4 level-1 covers 1.000 of the domain | synthetic ratios to the same depth [3.84, 3.95]

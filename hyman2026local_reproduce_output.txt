@@ -1,0 +1,70 @@
+python 3.13.16  numpy 2.5.3
+A  EXACT-CHECK PASS (707 cases)
+B  Table 1: fixed refined volume p = 1/20, r = 4 (H = 0)
+   d=1  f_d=0.1739  S_ideal=2.6286  beta=0.6196
+   d=2  f_d=0.4571  S_ideal=1.6867  beta=0.4071
+   d=3  f_d=0.7711  S_ideal=1.2073  beta=0.1717
+C  Two-level example, r = 4
+   f=0.10  S_ideal=3.0769  beta=0.6750  S(h=0.1)=2.8571  S(h=0.5)=2.2222  H/W_G at h=0.5: 0.1250
+   f=0.50  S_ideal=1.6000  beta=0.3750  S(h=0.1)=1.5385  S(h=0.5)=1.3333  H/W_G at h=0.5: 0.1250
+   f=0.90  S_ideal=1.0811  beta=0.0750  S(h=0.1)=1.0526  S(h=0.5)=0.9524  H/W_G at h=0.5: 0.1250
+D  Table 2: S and beta with all cells advanced (a = 1); beta with uncovered cells only, d = 3
+   r=2 delta=1  S_inf=3/2 = 1.5000   beta_inf=1/3 = 0.3333   leaf d=3: a=3/4, beta_inf=2/7 = 0.2857
+   r=2 delta=2  S_inf=7/6 = 1.1667   beta_inf=1/7 = 0.1429   leaf d=3: a=1/2, beta_inf=4/49 = 0.0816
+   r=2 delta=3  S_inf=15/14 = 1.0714   beta_inf=1/15 = 0.0667   leaf d=3: a=0, beta_inf=0 = 0.0000
+   r=2 delta=0  L=3  S_L=2.1333  beta_L=0.5312   leaf d=3: S_L=2.0531 beta_L=0.5129
+   r=2 delta=0  L=7  S_L=4.0157  beta_L=0.7510   leaf d=3: S_L=3.8139 beta_L=0.7378
+   r=4 delta=1  S_inf=5/4 = 1.2500   beta_inf=1/5 = 0.2000   leaf d=3: a=15/16, beta_inf=4/21 = 0.1905
+   r=4 delta=2  S_inf=21/20 = 1.0500   beta_inf=1/21 = 0.0476   leaf d=3: a=3/4, beta_inf=16/441 = 0.0363
+   r=4 delta=3  S_inf=85/84 = 1.0119   beta_inf=1/85 = 0.0118   leaf d=3: a=0, beta_inf=0 = 0.0000
+   r=4 delta=0  L=3  S_L=3.0118  beta_L=0.6680   leaf d=3: S_L=2.9880 beta_L=0.6653
+   r=4 delta=0  L=7  S_L=6.0001  beta_L=0.8333   leaf d=3: S_L=5.9413 beta_L=0.8317
+   Table 3: per-level gain for a point, uncovered cells only: a(r-1)/(r-1+a)
+   r=2: d=1: 1/3  d=2: 3/7  d=3: 7/15
+   r=4: d=1: 3/5  d=2: 5/7  d=3: 63/85
+   Table 3: leaf budgets for a curve in d = 2 and d = 3: r=2,d=2: 2/9  r=2,d=3: 2/7  r=4,d=2: 4/25  r=4,d=3: 4/21
+   capped time ratio r_t < r (rho = r^delta in space), a = 1: beta_inf = (r_t - 1)/(r_t rho - 1)
+   r=4 r_t=2: delta=1: 1/7  delta=2: 1/31  delta=3: 1/127
+   r=2 r_t=1: delta=1: 0  delta=2: 0  delta=3: 0
+   r=2 delta=1  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 5.0e-01 2.5e-01 1.2e-01 6.2e-02 3.1e-02 1.6e-02 7.8e-03 3.9e-03
+   r=2 delta=2  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 3.0e-01 8.3e-02 2.2e-02 5.7e-03 1.4e-03 3.6e-04 9.1e-05 2.3e-05
+   r=2 delta=3  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 1.7e-01 2.4e-02 3.2e-03 4.1e-04 5.3e-05 6.6e-06 8.3e-07 1.0e-07
+   r=4 delta=1  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 2.5e-01 6.2e-02 1.6e-02 3.9e-03 9.8e-04 2.4e-04 6.1e-05 1.5e-05
+   r=4 delta=2  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 7.4e-02 4.8e-03 3.0e-04 1.9e-05 1.2e-06 7.5e-08 4.7e-09 2.9e-10
+   r=4 delta=3  relative gap (beta_inf - beta_L)/beta_inf, L=1..8: 1.9e-02 3.2e-04 5.0e-06 7.8e-08 1.2e-09 1.9e-11 3.0e-13 4.7e-15
+E  Table 4: synthetic 3D hierarchies, base 16^3, r = 2, band = 2 cells, L = 5 (circle tilted by TILT)
+   point         S_L from counts, L=1..5: 1.8767 3.2333 4.8438 6.9149 8.0941   beta_L: 0.4672 0.6907 0.7935 0.8554 0.8765
+   point         delta=0  M=[4096, 288, 272, 304, 240, 304]  mean growth (M5/M1)^(1/4)=1.014  last M5/M4=1.267  r^delta=1  S5(counts)=8.0941  S5(geometric model)=3.0476  beta_u(counts, L=5)=0.8788
+   circle_tilted S_L from counts, L=1..5: 1.4070 1.5314 1.5389 1.5233 1.5165   beta_L: 0.2893 0.3470 0.3502 0.3435 0.3406
+   circle_tilted delta=1  M=[4096, 2984, 6072, 12144, 24416, 48344]  mean growth (M5/M1)^(1/4)=2.006  last M5/M4=1.980  r^delta=2  S5(counts)=1.5165  S5(geometric model)=1.4769  beta_u(counts, L=5)=0.2976  S_inf=1.5000  beta_u,inf=0.2857
+   sphere        S_L from counts, L=1..5: 1.1727 1.1832 1.1745 1.1696 1.1674   beta_L: 0.1473 0.1548 0.1486 0.1450 0.1434
+   sphere        delta=2  M=[4096, 9808, 37616, 148728, 592808, 2372680]  mean growth (M5/M1)^(1/4)=3.944  last M5/M4=4.002  r^delta=4  S5(counts)=1.1674  S5(geometric model)=1.1664  beta_u(counts, L=5)=0.0824  S_inf=1.1667  beta_u,inf=0.0816
+   ball          S_L from counts, L=1..5: 1.1625 1.1423 1.1081 1.0889 1.0798   beta_L: 0.1398 0.1246 0.0976 0.0817 0.0739
+   ball          delta=3  M=[4096, 10552, 52376, 319272, 2209632, 16396936]  mean growth (M5/M1)^(1/4)=6.279  last M5/M4=7.421  r^delta=8  S5(counts)=1.0798  S5(geometric model)=1.0714  beta_u(counts, L=5)=0.0078  S_inf=1.0714  beta_u,inf=0.0000
+   circle        L=1..11 ratios: 2.003 1.981 1.794 2.252 1.999 1.976 1.877 2.150 1.942 1.952   S_L: 1.3957 1.5237 1.5383 1.5698 1.5014 1.4932 1.4992 1.5246 1.4912 1.5014 1.5113   min/max S_L for L>=5: 1.4912/1.5246   kappa(levels 1..11)=1.1258
+   circle_tilted L=1..11 ratios: 2.035 2.000 2.011 1.980 2.002 2.000 2.006 2.000 2.001 1.998   S_L: 1.4070 1.5314 1.5389 1.5233 1.5165 1.5091 1.5049 1.5014 1.5005 1.5000 1.5002   min/max S_L for L>=5: 1.5000/1.5165   kappa(levels 1..11)=1.0228
+   band=3 point         M=[4096, 912, 896, 936, 872, 920]  mean growth=1.002
+   band=3 circle_tilted M=[4096, 6816, 13632, 27288, 54528, 108832]  mean growth=1.999
+   band=3 sphere        M=[4096, 15736, 57496, 224272, 892584, 3559408]  mean growth=3.878
+   band=3 ball          M=[4096, 15936, 67112, 366648, 2379056, 17028880]  mean growth=5.717
+   r=4 circle_tilted L=3  M=[4096, 23872, 97152, 386752]  growth M2/M1=4.070 M3/M2=3.981  r^delta=4  S3(counts)=1.2406  S_inf=1.2500
+H  Overhead fractions implied by published speedup pairs: H/W_glob = 1/S_ach - 1/S_th
+   Breuer-Heinecke Table I    S_th=2.28     S_ach=2.14     H/W_glob=0.0287
+   Breuer-Heinecke accuracy   S_th=6.3      S_ach=6.0      H/W_glob=0.0079
+   Seny et al. turbofan       S_th=10.932   S_ach=10.457   H/W_glob=0.0042
+   Fernando-Sundar d=9        S_th=3.31     S_ach=3.3      H/W_glob=0.0009
+   Fernando-Sundar d=10       S_th=3.31     S_ach=2.87     H/W_glob=0.0463
+   Fernando-Sundar d=11       S_th=3.49     S_ach=3.12     H/W_glob=0.0340
+   Fernando-Sundar d=12       S_th=3.56     S_ach=3.21     H/W_glob=0.0306
+   range 0.0009 to 0.0463; median 0.0287
+I  Phases per coarse step: global stepping fused = Q, global per-level = (L+1) Q, subcycling = sum r^l
+   r=2 L=3: fused 8  per-level 32  subcycling 15  sub/fused=1.875  limit r/(r-1)=2.000
+   r=2 L=5: fused 32  per-level 192  subcycling 63  sub/fused=1.969  limit r/(r-1)=2.000
+   r=4 L=3: fused 64  per-level 256  subcycling 85  sub/fused=1.328  limit r/(r-1)=1.333
+G  AMReX x_C range (-0.422, -0.003) agrees with s6_tables_output.txt
+G  AMReX points: 17 agree with evaluation_s5.json to 5e-5; beta 0.131 to 0.903, x -0.451 to -0.060
+matplotlib 3.11.2
+F  Figure 2 (budget against depth) written: hyman2026local_fig1_budget.pdf, hyman2026local_fig1_budget.png
+G  Figure 1 (budget against dimension) written: hyman2026local_fig2_dimension.pdf, hyman2026local_fig2_dimension.png
+   sha256 hyman2026local_fig1_budget.png e412137a74db1f410efa0a53be12d2f96ed6d86d4505286c648b883015e561f4
+   sha256 hyman2026local_fig2_dimension.png def4eb43270cd229b6c8d97c0852ab0ddc56fd8432c674502d39007fe40bb1a7
