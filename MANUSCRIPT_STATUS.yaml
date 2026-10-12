@@ -56,20 +56,20 @@ distribution:
     cross_list:
       - physics.comp-ph              # confirmed by Mac (\GO at the branch gate, 2026-10-08)
     package_built: true
-    package_path: hyman2026local_v1_6_1_arXiv.tar.gz
-    package_built_date: 2026-10-10
+    package_path: hyman2026local_v1_7_0_arXiv.tar.gz
+    package_built_date: 2026-10-12
   overleaf:                         # COR v4.1 package (S10)
     package_built: true
-    package_path: hyman2026local_COR_2026-10-10.zip
-    package_built_date: 2026-10-10
+    package_path: hyman2026local_COR_2026-10-12.zip
+    package_built_date: 2026-10-12
   github:
-    created: false                  # as recorded at S11; observed public on 2026-10-12 with the COR v1_6_1 contents (M12.5), pending Mac's confirmation
+    created: true                   # 2026-10-10 by Mac; held the COR v1_6_1 contents by mistake (Mac, 2026-10-12, M13.1); reset 2026-10-12 to the CGR v1_7_0 archive, commit d41e7cf, post-push check PASS (M13.3)
     url: https://github.com/machyman/hyman2026local
-    visibility: planned
+    visibility: public
     canonical_yaml_url: null
     package_built: true
-    package_path: hyman2026local_2026-10-10.zip
-    package_built_date: 2026-10-10
+    package_path: hyman2026local_2026-10-12.zip
+    package_built_date: 2026-10-12
   zenodo:
     minted: false
     doi: null
@@ -84,7 +84,7 @@ submission:
   current_round: 0
   editor_assigned: null
   decision_expected_by: null
-  notes: "S12 (2026-10-12, branch 10): v1_7_0 credits Li and Hyman, LA-UR-06-8741 (G21 to G24); COR package, arXiv tarball and CGR archive rebuilt for v1_7_0; nothing posted or pushed by Claude. Observed 2026-10-12 (M12.5): github.com/machyman/hyman2026local is public and serves the COR v1_6_1 package contents, without the reproduce script or validation/; no arXiv listing found; to be confirmed by Mac. Branch 9 close (2026-10-12): Mac recovered Li and Hyman, LA-UR-06-8741, which derives the note's two-level formula and tests it; v1_6_1 is held from posting; rulings G21 to G24 add S12 (credit, the §3.4 correction, the citation, the accuracy sentence) in v1_7_0, with the packages rebuilt. S11 CGR v4.1.1 (2026-10-10, branch 9): repository archive hyman2026local_2026-10-10.zip (430 files, MIT license, CITATION.cff with arXiv TBD); CGR-Audit 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW; CGR-FreshExtract PASS; manuscript-github source-layer gate PASS; nothing pushed. S10 COR v4.1 (2026-10-10, branch 9): Mac confirmed G12 at 13:00, so v1_6_1 replaces the AUTHOR note with the statement of responsibility and is dated October 10, 2026 (24 pp, compile clean); G18(a) covers the HIGH both S9 scorers rank first (G20); MIT license for the repository (S11). COR Phase 1 (2026-10-10, branch 9): Mac accepted the recorded state ('accept \\GO', 07:52): not submitted, not on arXiv, no GitHub repository yet, no referee reports, no companion papers; public checks agree (M10.8). S10 in progress: v1_6_1 (z-bump) moves Table 3's float above the paragraph that cites it (L8, M10.9), no word changed; the G12 attestation not given, so the COR bundle waits. Branch gate after S9 (2026-10-09, branch 8): Mac approved cleanup proposal 2026-10-09 run 3 by name (3 files: the two 2026-10-09 run 1 archives and the top-level v1_5_0 PDF, whose copy is in archive/v1_5_0/) and sent \\GO at 20:09, accepting G18(a): COR v4.1 next (S10) at the current readiness, with the S9 scorers' converged architecture and G16(b) recorded for a journal version (E-S9, E-S6); the G12 attestation not given. S9 (2026-10-09, branch 8): v1_6_0 (y-bump, 24 pp) restructures v1_5_0 under G17(b): Section 3.2 split into Growth law, Budgets for feature-following hierarchies and Agreement with earlier estimates; published overheads moved to open Section 4 (Published overheads and what the work model leaves out); an unnumbered measures table in 5.1; the Conclusions' first paragraph in three sentences; glosses of AMReX and the box-counting law. Two cold GSR scorers: STS 79 and 78, mean 78.5 (target 90 not met); diff check 1 HIGH and 2 MEDIUM fixed, follow-up clean of HIGH and MEDIUM. Registry: fig2 PNG hash set to the on-disk file (M9.4). Branch gate after S8 (2026-10-09, branch 7): Mac approved cleanup proposal 2026-10-09 run 2 by name (executed for 3 files: the two run5 archives and the top-level v1_4_1 PDF, whose copy is in archive/v1_4_1/; the two .pyc caches are under the protected validation/ and stay) and sent \\GO at 13:51, accepting G17(b), a second text-only restructuring as S9 (COR S10, CGR S11); the G12 attestation not given. S8 (2026-10-09, branch 7): v1_5_0 (y-bump, 24 pp) restructures v1_4_1 under G15(a′): abstract novelty first, decision box in Section 1, published overheads as Section 3.3, Testing the model folded into 5.1, Section 5 cut with protocol detail in Appendix A, Table A1 counterfactuals, Figure 1 redrawn; cold GSR STS 78 (target 90 not met); diff check 5 HIGH and 7 MEDIUM fixed, follow-up 2 MEDIUM fixed. Branch gate after S7 (2026-10-09, branch 6): Mac approved cleanup run 6 by name (3 files: the two run4 archives and the top-level v1_4_0 PDF, whose copy is in archive/v1_4_0/); G15 (restructuring for readiness), G16 (natural near-break-even design) and the G12 attestation not yet ruled, carried to S8 kickoff. S7 (2026-10-09, branch 6): v1_4_1 (z-bump, 22 pp) adds the AI-use sentence on Section 5 (G10), the repository URL (G11), referee 3's ten LOW items (G14) and a Section 5.3 explanation of why no one-core run came near break-even (G9 prime (a); E-S6 kept for a journal version after the injected-cost design was withdrawn as uninformative). The responsibility marker stays until Mac attests (G12). Cold GSR v3 score STS 80, below the 90 target; restructuring proposed as G15. Diff check: no HIGH or MEDIUM remain. Branch gate after S6 (2026-10-08, branch 5): Mac approved cleanup run 5 by name (3 files: the two run3 archives and the top-level v1_3_2 PDF, whose copy is in archive/v1_3_2/); E-S6 not yet ruled, carried to S7 kickoff. S6 (2026-10-08, branch 5): v1_4_0 adds Section 5, a paired test in AMReX, with Table 5 and Figure 3, and AMReX budgets on Figure 1 (rulings G4 to G8, all option (a)). Pre-specified result: the frozen model predicts held-out speedups with median error 0.071 (PASS); post hoc, the update counts alone do as well (0.073) except for points, the model misses the components, and no configuration nears break-even. Overhead: x_C (Section 2 definition) -0.42 to -0.003, negative in all 17; time-ratio y -0.11 to 0.19, positive in 12. VER role pass on the 16 S2 entries: 0 HIGH, fixes applied. Cold referees: 4 HIGH, then 2 HIGH, then none after revision. ASM bands met. Two AUTHOR markers (repository URL; responsibility statement) block arXiv posting. arXiv categories math.NA with cross-list physics.comp-ph confirmed by Mac (2026-10-08). GATE C ruling C1: run the AMReX paired validation (Plan S3-S5) before posting. S5 (2026-10-08): the pre-registered held-out test passes R1.2 (median error 0.071, 95% CI 0.021 to 0.082; no miss above 20%); the manuscript does not report it until S6. Posting remains Mac's decision."
+  notes: "S13 part 1 (2026-10-12, branch 11): Mac stated that he uploaded the COR archive to the repository by mistake instead of the CGR archive (M12.5 settled); no Zenodo connection; with his approval by name, the repository was reset to one commit holding hyman2026local_2026-10-12.zip (d41e7cf, 430 files, v1_7_0), replacing 63bde79 and 5ca6418; post-push check: 430/430 files byte-identical, 4/4 printed paths, gate PASS (2 MEDIUM by design, 1 LOW). Not on arXiv yet; CGR Stage B follows the posting. Branch 10 close (2026-10-12): Mac approved cleanup 2026-10-12 run 2 by name with \\GO (10:04); 3 files removed; the repository state (M12.5) is still unconfirmed. S12 (2026-10-12, branch 10): v1_7_0 credits Li and Hyman, LA-UR-06-8741 (G21 to G24); COR package, arXiv tarball and CGR archive rebuilt for v1_7_0; nothing posted or pushed by Claude. Observed 2026-10-12 (M12.5): github.com/machyman/hyman2026local is public and serves the COR v1_6_1 package contents, without the reproduce script or validation/; no arXiv listing found; to be confirmed by Mac. Branch 9 close (2026-10-12): Mac recovered Li and Hyman, LA-UR-06-8741, which derives the note's two-level formula and tests it; v1_6_1 is held from posting; rulings G21 to G24 add S12 (credit, the §3.4 correction, the citation, the accuracy sentence) in v1_7_0, with the packages rebuilt. S11 CGR v4.1.1 (2026-10-10, branch 9): repository archive hyman2026local_2026-10-10.zip (430 files, MIT license, CITATION.cff with arXiv TBD); CGR-Audit 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW; CGR-FreshExtract PASS; manuscript-github source-layer gate PASS; nothing pushed. S10 COR v4.1 (2026-10-10, branch 9): Mac confirmed G12 at 13:00, so v1_6_1 replaces the AUTHOR note with the statement of responsibility and is dated October 10, 2026 (24 pp, compile clean); G18(a) covers the HIGH both S9 scorers rank first (G20); MIT license for the repository (S11). COR Phase 1 (2026-10-10, branch 9): Mac accepted the recorded state ('accept \\GO', 07:52): not submitted, not on arXiv, no GitHub repository yet, no referee reports, no companion papers; public checks agree (M10.8). S10 in progress: v1_6_1 (z-bump) moves Table 3's float above the paragraph that cites it (L8, M10.9), no word changed; the G12 attestation not given, so the COR bundle waits. Branch gate after S9 (2026-10-09, branch 8): Mac approved cleanup proposal 2026-10-09 run 3 by name (3 files: the two 2026-10-09 run 1 archives and the top-level v1_5_0 PDF, whose copy is in archive/v1_5_0/) and sent \\GO at 20:09, accepting G18(a): COR v4.1 next (S10) at the current readiness, with the S9 scorers' converged architecture and G16(b) recorded for a journal version (E-S9, E-S6); the G12 attestation not given. S9 (2026-10-09, branch 8): v1_6_0 (y-bump, 24 pp) restructures v1_5_0 under G17(b): Section 3.2 split into Growth law, Budgets for feature-following hierarchies and Agreement with earlier estimates; published overheads moved to open Section 4 (Published overheads and what the work model leaves out); an unnumbered measures table in 5.1; the Conclusions' first paragraph in three sentences; glosses of AMReX and the box-counting law. Two cold GSR scorers: STS 79 and 78, mean 78.5 (target 90 not met); diff check 1 HIGH and 2 MEDIUM fixed, follow-up clean of HIGH and MEDIUM. Registry: fig2 PNG hash set to the on-disk file (M9.4). Branch gate after S8 (2026-10-09, branch 7): Mac approved cleanup proposal 2026-10-09 run 2 by name (executed for 3 files: the two run5 archives and the top-level v1_4_1 PDF, whose copy is in archive/v1_4_1/; the two .pyc caches are under the protected validation/ and stay) and sent \\GO at 13:51, accepting G17(b), a second text-only restructuring as S9 (COR S10, CGR S11); the G12 attestation not given. S8 (2026-10-09, branch 7): v1_5_0 (y-bump, 24 pp) restructures v1_4_1 under G15(a′): abstract novelty first, decision box in Section 1, published overheads as Section 3.3, Testing the model folded into 5.1, Section 5 cut with protocol detail in Appendix A, Table A1 counterfactuals, Figure 1 redrawn; cold GSR STS 78 (target 90 not met); diff check 5 HIGH and 7 MEDIUM fixed, follow-up 2 MEDIUM fixed. Branch gate after S7 (2026-10-09, branch 6): Mac approved cleanup run 6 by name (3 files: the two run4 archives and the top-level v1_4_0 PDF, whose copy is in archive/v1_4_0/); G15 (restructuring for readiness), G16 (natural near-break-even design) and the G12 attestation not yet ruled, carried to S8 kickoff. S7 (2026-10-09, branch 6): v1_4_1 (z-bump, 22 pp) adds the AI-use sentence on Section 5 (G10), the repository URL (G11), referee 3's ten LOW items (G14) and a Section 5.3 explanation of why no one-core run came near break-even (G9 prime (a); E-S6 kept for a journal version after the injected-cost design was withdrawn as uninformative). The responsibility marker stays until Mac attests (G12). Cold GSR v3 score STS 80, below the 90 target; restructuring proposed as G15. Diff check: no HIGH or MEDIUM remain. Branch gate after S6 (2026-10-08, branch 5): Mac approved cleanup run 5 by name (3 files: the two run3 archives and the top-level v1_3_2 PDF, whose copy is in archive/v1_3_2/); E-S6 not yet ruled, carried to S7 kickoff. S6 (2026-10-08, branch 5): v1_4_0 adds Section 5, a paired test in AMReX, with Table 5 and Figure 3, and AMReX budgets on Figure 1 (rulings G4 to G8, all option (a)). Pre-specified result: the frozen model predicts held-out speedups with median error 0.071 (PASS); post hoc, the update counts alone do as well (0.073) except for points, the model misses the components, and no configuration nears break-even. Overhead: x_C (Section 2 definition) -0.42 to -0.003, negative in all 17; time-ratio y -0.11 to 0.19, positive in 12. VER role pass on the 16 S2 entries: 0 HIGH, fixes applied. Cold referees: 4 HIGH, then 2 HIGH, then none after revision. ASM bands met. Two AUTHOR markers (repository URL; responsibility statement) block arXiv posting. arXiv categories math.NA with cross-list physics.comp-ph confirmed by Mac (2026-10-08). GATE C ruling C1: run the AMReX paired validation (Plan S3-S5) before posting. S5 (2026-10-08): the pre-registered held-out test passes R1.2 (median error 0.071, 95% CI 0.021 to 0.082; no miss above 20%); the manuscript does not report it until S6. Posting remains Mac's decision."
 
 referee_history: []
 
@@ -98,7 +98,7 @@ assets:
     awaited: 0
     external: 0
     unhashed: 0
-    last_integrity_check: 2026-10-10
+    last_integrity_check: 2026-10-12
     integrity_status: pass
   protected_extra:
     - hyman2026local.bib
@@ -158,6 +158,20 @@ assets:
     - hyman2026local_Session10_Report.md
     - references/
     - HANDOFF_hyman2026local_Session9.md
+    - hyman2026local_v1_6_1.tex
+    - hyman2026local_v1_6_1.bbl
+    - archive/v1_6_1/
+    - hyman2026local_COR_2026-10-12.zip
+    - hyman2026local_v1_7_0_arXiv.tar.gz
+    - hyman2026local_v1_7_0_arXiv_metadata.txt
+    - hyman2026local_2026-10-12.zip
+    - hyman2026local_DiffCheck_S12_2026-10-12.md
+    - HANDOFF_hyman2026local_Session11.md
+    - hyman2026local_Session11_Report.md
+    - hyman2026local_Session12_Report.md
+    - hyman2026local_RunReport_2026-10-12.md
+    - HANDOFF_hyman2026local_Session12.md
+    - hyman2026local_PostPush_S13_2026-10-12.md
   items:
     - id: fig1
       kind: figure
@@ -405,20 +419,30 @@ assets:
 metadata:
   schema_version: 1.3
   last_updated: 2026-10-12
-  last_updated_by: "claude-session-11 (branch 9 closing; Li and Hyman report recovered, G21 to G24 ruled, S12 added; cleanup 2026-10-12 executed)"
+  last_updated_by: "claude-session-13 part 1 (branch 11; repository reset to the CGR v1_7_0 archive; post-push check PASS)"
   master_plan: hyman2026local_MasterPlan.md
-  session_counter: 11
-  handoff_file: HANDOFF_hyman2026local_Session11.md
-  next_task: "S12 kickoff (gate K) in branch 10: credit Li and Hyman (LA-UR-06-8741) under rulings G21 to G24 in a y-bump to v1_7_0, with a diff check, then rebuild the COR package, arXiv tarball and CGR archive. v1_6_1 is not to be posted"
+  session_counter: 12
+  handoff_file: HANDOFF_hyman2026local_Session12.md
+  next_task: "S13 part 2 (waits on Mac): Mac posts v1_7_0 to arXiv from hyman2026local_v1_7_0_arXiv.tar.gz with hyman2026local_v1_7_0_arXiv_metadata.txt; then CGR Stage B (identifier into CITATION.cff, the README and the YAML), a new archive, a push and the post-push check. The repository serves v1_7_0 (d41e7cf). The v1_6_1 packages are not to be used"
   registry_entry_written: false
   notes: "Branch gate after S5 (2026-10-08, branch 4): Mac approved cleanup run 4 by name and sent \\GO at 19:47, accepting G1(a) keep Lemma 1 and report measured growth, G2(a) keep the one-run test as sufficient and report its conservatism, G3(a) report negative H in the validation section and one scoped abstract clause; 14 files removed (the two run2 archives and 12 recovered scratch files; count erratum M5.6). S5 (2026-10-08, branch 4): pair K1+O3 selected by training leave-one-out (median 0.124); seven held-out predictions frozen (SHA-256 11d2e030, recorded in the CHANGELOG before evaluation); R1.2 verdict PASS, median held-out error 0.071 (95% bootstrap CI 0.021 to 0.082), largest 0.080, no miss above 20%; all twelve pre-registered pairs would also pass (held-out medians 0.032 to 0.071); an independent recomputation agrees exactly. Measured H<0 in all 17 configurations; the one-run test has no false positive but holds in only 6 of 17. Figure 3 drawn (validation/fig3_validation.py), not yet in the manuscript. Exploratory set run after the freeze (deviation D1): frozen-pair errors 0.001 to 0.136. Branch-3 scratchpad files retained in recovered_scratchpad_branch3/ (M5.5). Branch gate after S4 (2026-10-08): ruling R3.1 adds COR v4.1 (S8) and CGR v4.1.1 (S9) after document editing is final (protocol texts in protocols/); cleanup run 3 approved by name and executed (6 files; the two A8 files kept in archive/branch1_superseded/). S4 (2026-10-08, branch 3) ran the primary matrix: 170 runs plus 20 plan-section-10 reruns; QC passes with one flagged held-out cell; held-out speedups withheld until the S5 freeze; training configurations show negative measured overhead H. S3 (2026-10-08, branch 3) built the AMReX validation harness: analysis plan v1 hashed e4c615e3 before any timed run and amendment v2 hashed cbc2f22c before any S4 timing; Advection_AmrCore patched (harness v2, 68f11783) and built in 2D and 3D; smoke and calibration runs are non-analysis data. The manuscript is unchanged at v1_3_2. v1_3_2 (2026-10-08, branch gate) adds to the AI-use statement the sentence Mac approved as ruling W0-6 (the referee panel's proposals); no other change. v1_3_1 (2026-10-08, branch gate) is a format-only z-bump for protocol compliance: FLTE ties before 71 citations and equation references, microtype, and a Figure 2 recolor (W5-16(f)); rendered word sequence unchanged apart from line breaks. v1_3_0 (2026-10-08) implements the MREP cycle findings on GATE B and C rulings: repositioning, limit corollary, latency both ways, one-run test, published-overhead bracket, Figure 2, tilted circle; see CHANGELOG. Earlier: v1_2_1 substrate re-hashed after a build-path-only edit (five citation keys standardized to Google Scholar form; rendered text verified identical by pdftotext diff). li2002local (Local time step versus locked time step, LANL 2002) could not be located online; by ruling R1.6 it is cited only through LA-UR-03-8927 and is uncited in v1_3_x. Project transferred from ChatGPT as 'amrstepping' v1.1.0 (archive/amrstepping_v1_1_0_chatgpt_package.zip, rollback anchor). Key renamed to hyman2026local per preference 7.6."
   readme_extra_files:
-    hyman2026local_v1_6_1.pdf: v1_6_1 PDF (24 pp); .bbl alongside
-    hyman2026local_COR_2026-10-10.zip: COR v4.1 Overleaf-ready package (tex, bib, bbl, three figure PDFs, README, YAML, CHANGELOG, arXiv metadata); compiles in isolation
-    hyman2026local_v1_6_1_arXiv.tar.gz: arXiv source (tex, bbl, three figure PDFs); compiles in isolation without bibtex
+    hyman2026local_v1_7_0.pdf: v1_7_0 PDF (25 pp); .bbl alongside
+    hyman2026local_COR_2026-10-12.zip: COR v4.1 package for v1_7_0 (tex, bib, bbl, three figure PDFs, README, YAML, CHANGELOG, arXiv metadata); compiles in isolation
+    hyman2026local_v1_7_0_arXiv.tar.gz: arXiv source for v1_7_0 (tex, bbl, three figure PDFs); compiles in isolation without bibtex
+    hyman2026local_v1_7_0_arXiv_metadata.txt: arXiv form fields for v1_7_0 (25 pages; abstract unchanged, 1,670 characters with S_ideal expanded)
+    hyman2026local_2026-10-12.zip: CGR v4.1.1 repository archive for v1_7_0 (430 files, MIT); audit, fresh extract and manuscript-github gate pass; pushed 2026-10-12 as commit d41e7cf (S13 part 1, M13.3)
+    hyman2026local_DiffCheck_S12_2026-10-12.md: S12 independent check of v1_6_1 to v1_7_0 (5 MEDIUM, then 1 MEDIUM, all fixed; no HIGH)
+    hyman2026local_Session12_Report.md: Session 12 report (Li and Hyman credit, v1_7_0, packages rebuilt) with gate log
+    hyman2026local_RunReport_2026-10-12.md: run report after S12 with the excellence assessment
+    hyman2026local_PostPush_S13_2026-10-12.md: S13 part 1 post-push check of the live repository (430/430 identical, gate PASS)
+    hyman2026local_repo_reset.sh: script that resets the repository to the CGR archive as one commit (tested; the push itself was made from this session)
+    archive/v1_6_1/: the v1_6_1 version set (tex, pdf, bbl, generator, log, three figures); held from posting
+    hyman2026local_COR_2026-10-10.zip: SUPERSEDED by the 2026-10-12 package; COR v4.1 Overleaf-ready package (tex, bib, bbl, three figure PDFs, README, YAML, CHANGELOG, arXiv metadata); compiles in isolation
+    hyman2026local_v1_6_1_arXiv.tar.gz: SUPERSEDED, not to be posted; arXiv source (tex, bbl, three figure PDFs); compiles in isolation without bibtex
     hyman2026local_v1_6_1_arXiv_metadata.txt: title, author, categories, comments and the abstract with S_ideal expanded (1,670 characters) for the arXiv form
     hyman2026local_Session10_Report.md: Session 10 report (COR v4.1) with gate log
-    hyman2026local_2026-10-10.zip: CGR v4.1.1 repository archive for machyman/hyman2026local (MIT); audit and fresh extract pass; not pushed
+    hyman2026local_2026-10-10.zip: SUPERSEDED by the 2026-10-12 archive; CGR v4.1.1 repository archive for machyman/hyman2026local (MIT); audit and fresh extract pass; not pushed
     hyman2026local_Session11_Report.md: Session 11 report (CGR v4.1.1) with gate log
     hyman2026local_RunReport_2026-10-10.md: run report with the excellence assessment
     archive/v1_6_0/: the v1_6_0 version set (tex, pdf, bbl, generator, log, three figures)
@@ -500,13 +524,15 @@ metadata:
     CLEANUP_PROPOSAL_hyman2026local_2026-10-08.md: cleanup proposal; approved by Mac and executed 2026-10-08 (2 files deleted; copies in the BRANCH snapshot)
     HANDOFF_hyman2026local_Session4.md: branch handoff and manifest (Session 4 closing; startup prompt for branch 4)
     CLEANUP_PROPOSAL_hyman2026local_2026-10-08_run3.md: cleanup proposal run 3; approved by Mac by name and executed 2026-10-08 (6 files)
-    BRANCH_Snapshot_hyman2026local_2026-10-09_run3.zip: pre-cleanup snapshot for 2026-10-09 run 3 (599 files)
-    BRANCH_Recovery_hyman2026local_2026-10-09_run3.zip: recovery archive for branch 9
     CLEANUP_PROPOSAL_hyman2026local_2026-10-09_run3.md: cleanup proposal 2026-10-09 run 3; approved by Mac by name and executed 2026-10-09 (3 files)
     BRANCH_Snapshot_hyman2026local_2026-10-12.zip: pre-cleanup snapshot for 2026-10-12 (626 files)
     BRANCH_Recovery_hyman2026local_2026-10-12.zip: recovery archive for branch 10
     CLEANUP_PROPOSAL_hyman2026local_2026-10-12.md: cleanup proposal 2026-10-12; approved by Mac by name and executed 2026-10-12 (3 files)
     HANDOFF_hyman2026local_Session11.md: handoff for branch 10 (S12 first)
+    BRANCH_Snapshot_hyman2026local_2026-10-12_run2.zip: pre-cleanup snapshot for 2026-10-12 run 2 (648 files)
+    BRANCH_Recovery_hyman2026local_2026-10-12_run2.zip: recovery archive for branch 11
+    CLEANUP_PROPOSAL_hyman2026local_2026-10-12_run2.md: cleanup proposal 2026-10-12 run 2; approved by Mac by name and executed 2026-10-12 (3 files)
+    HANDOFF_hyman2026local_Session12.md: handoff for branch 11 (post-push check first, after Mac's push)
     references/Li_Hyman_LA-UR-06-8741_local_vs_locked.pdf: Li and Hyman, Local Time Step versus Locked Time Step for Adaptive Mesh Refinement, LA-UR-06-8741 (the source behind rulings G21 to G24)
     HANDOFF_hyman2026local_Session7.md: branch handoff and manifest (Session 7 closing; startup prompt for branch 7)
     HANDOFF_hyman2026local_Session8.md: branch handoff and manifest (Session 8 closing; startup prompt for branch 8)
@@ -531,11 +557,11 @@ metadata:
     hyman2026local_Session5_Report.md: Session 5 report (fit, freeze, evaluation, Figure 3, exploratory set) with gate log
     recovered_scratchpad_branch3/: 6 branch-3 scratchpad files kept by cleanup run 4 (patch edit scripts, branch tools, S4 console log) plus a README
     recovered_scratchpad_branch8/: the S9 text both GSR scorers read, the S9 diff check's input and the G17(b) ruling text, copied from the scratchpad at S10 (M10.3), with a README
-cgr:                                # CGR v4.1.1 report (S11, 2026-10-10)
+cgr:                                # CGR v4.1.1 report (S12 rebuild for v1_7_0, 2026-10-12; S11 built hyman2026local_2026-10-10.zip for v1_6_1, held)
   build_status: completed
-  archive_name: hyman2026local_2026-10-10.zip
-  archive_size_bytes: 1678530
-  archive_sha256: 3ccc86be7d7b31f26cf087dc761819df683fb3d24c9c8bfb1aad5a8d92b88bd3
+  archive_name: hyman2026local_2026-10-12.zip
+  archive_size_bytes: 1685981
+  archive_sha256: a2dc9f20eae338258b666bdb89c93c2a22df48947d54f1cd97703125ec8e1b2c
   build_decision: warned
   build_decision_rationale: "block-on-critical; 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW (Check 7 notes); fresh extract PASS"
   cgr_validation:
@@ -560,7 +586,7 @@ cgr:                                # CGR v4.1.1 report (S11, 2026-10-10)
       result: PASS
       file_count_match: true
       size_match: true
-      primary_artifact_identified: "hyman2026local_v1_6_1.tex, hyman2026local_reproduce.py, validation generators"
+      primary_artifact_identified: "hyman2026local_v1_7_0.tex, hyman2026local_reproduce.py, validation generators"
       primary_artifact_type: mixed
       execute_command: "chained in one shell under env -i: pdflatex x2; reproduce script; s6_tables.py; s8_appendix_table.py; fig3_validation.py; README renderer --check"
       compile_passes_completed: 2
@@ -569,8 +595,8 @@ cgr:                                # CGR v4.1.1 report (S11, 2026-10-10)
       errors: []
       timeout_seconds: 300
       execution_duration_seconds: 10
-      notes: "24 pp, 0 errors, 0 file-not-found, 0 undefined; every log and rows file equal to its reference; figure PDFs byte-identical"
+      notes: "S12 rerun on hyman2026local_2026-10-12.zip (430 files): 25 pp, 0 errors, 0 file-not-found, 0 undefined; every log and rows file equal to its reference; figure PDFs byte-identical; no .pyc written"
   manuscript_github:
     source_layer_gate: PASS
     findings: "0 CRITICAL, 0 HIGH; on the bare archive 2 MEDIUM (P4: README names out/table5_rows.tex and out/tableA1_rows.tex, which the reader's own run creates; 0 after a run), 1 LOW (no .gitattributes; every file enters release archives, as intended)"
-    not_verified: "Pages build, the rendered site, external URL liveness; the repository does not exist yet"
+    not_verified: "Pages build, the rendered site, external URL liveness. S12 rerun on the 2026-10-12 archive gives the same result (P1 all 4 printed paths resolve, P2 57 links). The live repository observed 2026-10-12 serves the COR v1_6_1 contents, not this archive, so the printed folder validation does not resolve there yet (M12.5); the post-push check follows Mac's push"

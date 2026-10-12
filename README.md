@@ -50,11 +50,10 @@ The file names keep the order in which the figures were made.
 | [`hyman2026local_reproduce_output.txt`](hyman2026local_reproduce_output.txt) | Its reference log |
 | [`validation/`](validation/README.md) | The AMReX validation; its own README lists every file |
 | [`requirements.txt`](requirements.txt) | Python package versions used |
-| [`LICENSE`](LICENSE) | MIT license |
+| [`LICENSE`](LICENSE) | MIT License, for the code |
+| [`LICENSE-CC-BY-4.0.md`](LICENSE-CC-BY-4.0.md) | CC BY 4.0, for the paper, figures, data and documentation |
 | [`CITATION.cff`](CITATION.cff) | How to cite |
-| [`MANUSCRIPT_STATUS.yaml`](MANUSCRIPT_STATUS.yaml) | Manuscript status and the registry of every figure and table: generator, inputs, outputs and SHA-256 hashes |
-| [`STATUS.md`](STATUS.md) | Dashboard rendered from `MANUSCRIPT_STATUS.yaml`. It describes the author's full working folder, so it lists some files that are not in this repository |
-| [`hyman2026local_render_readme.py`](hyman2026local_render_readme.py) | Renders `STATUS.md` from the YAML (needs PyYAML) |
+| [`MANUSCRIPT_STATUS.yaml`](MANUSCRIPT_STATUS.yaml) | Manuscript status and the registry of every figure and table: generator, inputs, outputs and SHA-256 hashes. It describes the author's full working folder, so it names some files that are not in this repository |
 | [`CHANGELOG.md`](CHANGELOG.md) | Session-by-session history of the manuscript |
 
 ## AMReX
@@ -67,7 +66,7 @@ This research used AI-assisted workflows for analysis, manuscript preparation an
 
 ## License
 
-MIT; see [`LICENSE`](LICENSE). It covers everything in this repository.
+The code, meaning every `.py` file, the harness patch and `requirements.txt`, is under the MIT License; see [`LICENSE`](LICENSE). Everything else, including the paper, its source and bibliography, the figures, the data, the logs and the documentation, is under CC BY 4.0; see [`LICENSE-CC-BY-4.0.md`](LICENSE-CC-BY-4.0.md). AMReX and amrex-tutorials keep their own licenses (see above).
 
 ## Citation
 

@@ -6,6 +6,74 @@ This file is maintained by the manuscript-tracking skill. One entry per working 
 
 ---
 
+## 2026-10-12: Session 13, part 1 (repository reset to the CGR v1_7_0 archive; post-push check PASS; Stage B pending; branch 11)
+
+v1_7_0 unchanged. Branch 11 opened on the Session 12 startup prompt; STEP 4 reconciled cleanly (M13.1) and STEP 6 held on the repository state.
+
+### Rulings and answers
+- M12.5 settled (M13.2): Mac uploaded the COR archive to the repository by mistake instead of the CGR archive. No Zenodo connection.
+- Mac approved by name (15:09): force-push the v1_7_0 commit to `machyman/hyman2026local` main, replacing commits `63bde79` and `5ca6418` (M13.3).
+
+### Protocols run
+- manuscript-github post-push check on a fresh download (`crv.py`, CRV v1.0): 430/430 files byte-identical to `hyman2026local_2026-10-12.zip`; one commit, `d41e7cf`, tree `ad90d9c4…`; P1 4/4 printed paths, P2 57 links; 2 MEDIUM by design, 1 LOW; gate PASS. The v1_6_1 files return 404 over raw; the v1_7_0 files return 200.
+
+### Distribution
+- GitHub: `distribution.github` set to created, public. The repository serves v1_7_0. Not on arXiv yet.
+
+### Files added / changed / removed
+- Added: `hyman2026local_PostPush_S13_2026-10-12.md`, `hyman2026local_repo_reset.sh`
+- Changed: `MANUSCRIPT_STATUS.yaml`, `README.md` (re-rendered), `hyman2026local_MasterPlan.md` (rev 36), `SHA256SUMS`, this file
+- Removed: none
+
+### Next
+- Mac posts v1_7_0 to arXiv from `hyman2026local_v1_7_0_arXiv.tar.gz` with `hyman2026local_v1_7_0_arXiv_metadata.txt`; then S13 part 2, CGR Stage B. The recovery archive predates these records; the next `\BRANCH` rebuilds it.
+
+## 2026-10-12: Session 12 (Li and Hyman credit under G21 to G24; v1_6_1 to v1_7_0; COR, arXiv and CGR packages rebuilt; branch 10)
+
+**Versions:** main v1_6_1 → v1_7_0 (y-bump)
+**Status:** not_yet_submitted. Nothing was posted or pushed by Claude. Observed 2026-10-12: the public repository serves the COR v1_6_1 contents (M12.5), pending Mac's confirmation
+
+### Protocols run
+- Startup STEPs 0 to 6. STEP 4 was clean (M12.1). Recovery archive observed as `44defe17…`. The branch again opened on a message carrying message 1's zip
+- K: tracking consistent (M12.2); path forward (M12.3). R decided the minor items within G21 to G24 (M12.4)
+- E1: `archive/v1_6_1/` holds the v1_6_1 set (11 files, byte-equal). `hyman2026local_v1_7_0.tex` changes 8 lines of v1_6_1:
+  - `\date`
+  - §1: the cite, the report's derivation, tests and conclusion, the 2003 remark, point and line refinement
+  - §1 (ii): the closed forms extend the two- and three-level formulas of Li and Hyman to deep hierarchies
+  - §2: credit, with covered coarse cells advanced and no overhead
+  - §3.1: their Eq. (3)
+  - §3.4: their Eq. (8) as the identity with δ = 0, a = 1 and a full base grid; equal counts hold only around a point; their tests and the agreement read from their figures (about 7 and 13 percent), replacing the "not recorded" sentence
+  - §4.2: the advected-vortex dispersion sentence (G24)
+- Bibliography: `li2002local` replaced by `li2006local` (LA-UR-06-8741, 2006, note on the 2002 version; VER verified from the primary document)
+- E2: clean build in 3 passes: 25 pp, 0 errors, 0 undefined, 0 warnings, 0/0 boxes, 34/35/34, 0 bibtex warnings, 0 em dashes. Table rows still at .tex lines 364 and 460. Abstract unchanged (1,642 / 1,670)
+- ASM: mean 23.0, short 8.2%, run 3, commas 5.42, connectives 0.49, nominalizations 2.62, no dashes, all inside the research-article bands. A first draft measured mean 23.1, and two sentences were shortened
+- E3: the reproduce script now names v1_7_0 (`78168efd…`). Its log is identical and Figures 1 and 2 regenerate byte for byte (PNGs pixel-identical). The registry's six references were updated; integrity 38/38
+- E4: independent diff check, `hyman2026local_DiffCheck_S12_2026-10-12.md`. Round 1 found 0 HIGH, 5 MEDIUM and 8 LOW; the follow-up found 0 HIGH, 1 MEDIUM and 3 LOW. Every MEDIUM was fixed. There is no unclaimed change, and every Li and Hyman statement traces to the report
+- E5, COR v4.1: `hyman2026local_COR_2026-10-12.zip` (`5fa2245a…`), `hyman2026local_v1_7_0_arXiv.tar.gz` (`43550976…`) and the metadata file (25 pages). Each compiles in isolation: 25 pp, 0 errors and warnings
+- E6, CGR v4.1.1: `hyman2026local_2026-10-12.zip` (`a2dc9f20…`, 430 files), the S11 tree with the v1_7_0 files, the bumped script, the README, `CITATION.cff` and STATUS. CGR-Audit: 0 CRITICAL, 0 HIGH, 0 MEDIUM, 2 LOW. FreshExtract: PASS (25 pp; every log and rows file identical; figure PDFs byte-identical). manuscript-github: gate PASS (0 CRITICAL, 0 HIGH, 2 MEDIUM by design, 1 LOW)
+
+### Files added / changed / removed
+- Added: `hyman2026local_v1_7_0.tex`, `.bbl`, `.pdf`; `hyman2026local_v1_7_0_arXiv.tar.gz`; `hyman2026local_v1_7_0_arXiv_metadata.txt`; `hyman2026local_COR_2026-10-12.zip`; `hyman2026local_2026-10-12.zip`; `hyman2026local_DiffCheck_S12_2026-10-12.md`; `archive/v1_6_1/` (11 files); `hyman2026local_Session12_Report.md`; `hyman2026local_RunReport_2026-10-12.md`
+- Changed: `hyman2026local.bib` (`ef960212…`); `hyman2026local_reproduce.py` (comment lines only); Master Plan (rev 33 to 34); YAML (version, distribution, `cgr`, `protected_extra`, `readme_extra_files`, metadata); README (re-rendered); SHA256SUMS; this file
+- Removed: none
+
+### After the run's exit (2026-10-12)
+- Mac's reply at 10:04: the cleanup proposal approved by name, with `\GO`. `\GO` accepts the recommendations; it does not confirm the repository state (M12.5), which stays open (M12.8)
+- S13 added: the post-push check and CGR Stage B, waiting on Mac's push and posting (M12.9)
+
+### Branch (\BRANCH v1_18_0)
+- Phase 0: key `hyman2026local` by the substrate stem; about 45% used. Phase 1: 652 files, 70,873,144 bytes, no zero-byte files; highest v1_7_0, also the newest
+- Phase 2: clean build of v1_7_0: 3 passes, 25 pp, 0 errors, warnings and boxes, 34/35/34, 0 bibtex warnings, 0 em dashes; `.bbl` and PDF text identical to outputs
+- Phase 3: `BRANCH_Snapshot_hyman2026local_2026-10-12_run2.zip`, 648 files, count diff empty, `14ffc65c…`
+- Phase 4 and 5a: `CLEANUP_PROPOSAL_hyman2026local_2026-10-12_run2.md` approved by name (10:04); removed `BRANCH_Recovery_hyman2026local_2026-10-09_run3.zip`, `BRANCH_Snapshot_hyman2026local_2026-10-09_run3.zip`, `hyman2026local_v1_6_1.pdf` (copy in `archive/v1_6_1/`); 651 files remain
+- Phase 5b: `HANDOFF_hyman2026local_Session12.md`, this section, the Session 12 report's closing section, Plan, YAML, README, SHA256SUMS. Phase 5c: `BRANCH_Recovery_hyman2026local_2026-10-12_run2.zip`
+- Phase 6: 11/11. Manifest 653/653; self-inclusion 5/5; hashes and F-1 at 68,292 bytes; `/home/claude` 0 work files; prompt paths 21, one adjudicated: `hyman2026local_v1_6_1.pdf` appears in the prompt's prose as deleted, with its copy in `archive/v1_6_1/` (P6); numbers 12/12/12/12/12; archives 649 and 648 files, byte-diff empty; cross-file; currency; first task S13; registry 38/38 and every `readme_extra_files` path on disk
+- Phase 7: startup prompt displayed (branch point message 2; first task S13, which waits on Mac's push)
+- Phase 8 pass 1 (cold): 0 discrepancies; recovery byte-diff empty over 649 files; README render matches; no file newer than the archive. Recovery build before the final one: `390b3c6c…` (first seal). Closing record written and re-sealed, then Phase 8 pass 2
+
+### Next
+- Branch 11 opens at message 2. S13 waits on Mac: confirm the repository state, replace its contents with `hyman2026local_2026-10-12.zip`, then the post-push check; post v1_7_0 to arXiv, then CGR Stage B
+
 ## 2026-10-10: Session 11 (CGR v4.1.1: GitHub repository archive; v1_6_1 unchanged; branch 9)
 
 **Versions:** main v1_6_1 (unchanged)
@@ -698,3 +766,5 @@ F-1: `HANDOFF_hyman2026local_Session8.md` SHA-256 `41dbb2556c75094dde3081ab5b20c
 F-1: `HANDOFF_hyman2026local_Session9.md` SHA-256 `40acf9ddd371ede0a50e30ec8935aadcbe27b0f84dbd8219be2e7d466f31d184` (its manifest row is self-referential; recorded after the file closed).
 
 F-1: `HANDOFF_hyman2026local_Session11.md` SHA-256 `15b99f45a438e7b2c99d600632605a31df40cd4df3ea4e6734858a6074fa976a` (its manifest row is self-referential; recorded after the file closed).
+
+F-1: `HANDOFF_hyman2026local_Session12.md` SHA-256 `61cc5ef9bff1c9ed997544c93e9df3bd65199dc51dcb7334f4bd15f6d179b5ea` (its manifest row is self-referential; recorded after the file closed).

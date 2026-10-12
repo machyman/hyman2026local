@@ -7,7 +7,9 @@ authors:
     affiliation: "Department of Mathematics, Tulane University"
     orcid: "https://orcid.org/0000-0001-5247-5794"
 version: v1_7_0
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 repository-code: "https://github.com/machyman/hyman2026local"
 preferred-citation:
   type: article
